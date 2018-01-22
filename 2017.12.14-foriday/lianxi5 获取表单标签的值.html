@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取表单标签的值</title>
+	<script>
+		window.onload=function(){
+			document.getElementById("c").onclick=function(){
+			//通过id来找到input的对象，用户名和密码
+			var a =document.getElementById("a").value;
+			var b =document.getElementById("b").value;
+			alert(a+" "+b);
+			}
+		}
+	</script>
+
+</head>
+<body>
+	用户名：<input type="text" id="a" placeholder="请输入用户名">
+	密码：<input type="password" id="b" placeholder="请输入密码">
+	<br/><input type="button" value="点击登录" id="c">
+</body>
+</html>

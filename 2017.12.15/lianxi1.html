@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>锚点链接</title>
+	<style>
+		*{margin: 0;padding: 0;text-decoration: none;}
+		div{width: 100%;height: 400px;border: red 1px solid;}
+		p{width: 20px;position: fixed;top: 50px;left: 0px;}/*因为p的宽度较小，所以删除display：block也没有多大效果，如果把p里面的width变大，那就能看出在一行的*/
+		p a{width: 20px;text-align: center;line-height: 20px;display: block;height: 20px;background:#000;color: #fff;}/*display: block  强制变块*/
+	</style>
+</head>
+<body>
+	<p>
+		<a href="#a1">1</a>
+		<a href="#a2">2</a>
+		<a href="#a3">3</a>
+		<a href="#a4">4</a>
+		<a href="#a5">5</a>
+	</p>
+	<div><a name="a1" id="a1">1</a></div>
+	<div><a name="a2" id="a2">2</a></div>
+	<div><a name="a3" id="a3">3</a></div>
+	<div><a name="a4" id="a4">4</a></div>
+	<div><a name="a5" id="a5">5</a></div>
+</body>
+</html>

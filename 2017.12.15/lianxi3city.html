@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>城市联动</title>
+	<script>
+		
+			var cityList = [
+				["贵州","贵阳","遵义","凯里","铜仁","安顺","仁怀","都匀"],// 0
+				["云南","昆明","曲靖","玉溪","宝山","丽江","普洱","临沧"],// 1
+				["四川","成都","自贡","攀枝花","泸州","德阳","绵阳","广元"],// 2
+				["北京","朝阳","东城","西城","昌平","怀柔","燕郊","顺义"],// 3
+				["湖南","长沙","江州","怀化","邵阳","湘潭","株洲","衡阳"],// 4
+				["重庆","江北区","南川","万盛","双桥","江津","长寿","培林"],// 5
+				["广东","广州","深圳","珠海","东莞","汕头","佛山","惠州"],// 6
+			];
+
+			window.onload=function(){
+			// 省份
+				for(var i =0;i<cityList.length;i++){
+						document.getElementById("sheng").innerHTML+="<option>"+cityList[i][0]+"</option>"
+					}
+
+			// 城市
+				for(var j =1;j<cityList[0].length;j++){
+						document.getElementById("cheng").innerHTML+="<option>"+cityList[0][j]+"</option>"
+					}
+			}
+			function show(){
+				var city = document.getElementById("sheng").value;
+
+				//清除所有  为0
+				document.getElementById("cheng").length=0;
+
+				for(var i = 0;i<cityList.length;i++){   //i代表的是行
+
+					if(cityList[i][0]==city){ //获取每行的第一个元素，然后拿去和城市对比，如果对比成功，那么就循环
+						// alert(city)
+						for(var j =1;j<cityList[i].length;j++){//j代表的是列  ，也就是数组里面的下标，从0开始，前面是省份 so从1开始
+							document.getElementById("cheng").innerHTML+="<option>"+cityList[i][j]+"</option>";
+						}
+					}
+				}
+				
+			}
+
+	</script>
+</head>
+<body>
+	省份：<select id="sheng" onchange="show();"></select>  
+	城市：<select id="cheng" ></select>
+</body>
+</html>

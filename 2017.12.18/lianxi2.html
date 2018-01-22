@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习任意数保留3位小数</title>
+	<!-- <style>
+		*{margin: 0;padding: 0;}
+		#name{width: 200px;height: 200px;border: 2px #000 solid;box-shadow: 0 0 5px 3px;margin: 400px auto;text-align: center;line-height: 200px;font-size: 100px;}
+	</style> -->
+	<script>
+		// 任意数保留3位小数
+		/*var ran =Math.random();//随机数0~1之间的数
+		var c =parseInt(ran*1000)/1000;
+		console.log(c);*/
+
+		//倒计时  第一种方法
+	/*	var i =10;
+		//定时器
+		var a =setInterval("changeValue()",1000);
+		//设置定时器的方法
+		function changeValue(){
+			
+			document.getElementById("name").innerHTML=i--;
+			if(i==-1){document.getElementById("name").innerHTML="结束";clearInterval(a);}//i等于-1是因为i-- 当i等于0时，i等于0-1=-1
+		
+		}*/
+		
+
+
+		//  倒计时  第二种方法
+		var i = 10;
+		//定时器
+		var a = setInterval(function(){
+			document.getElementById("name").innerHTML=i--;
+			if(i ==-1){document.getElementById("name").innerHTML="结束";clearInterval(a);}//i等于-1是因为i-- 当i等于0时，i等于0-1=-1
+		},1000)
+
+
+		//求一组数据的和 22,12,34,89,100,33,77,55之和
+		/*function name(){
+			document.write(arguments[0]+arguments[1]+arguments[2]+arguments[3]+arguments[4]+arguments[5]+arguments[6]+arguments[7])
+		}
+		name(22,12,34,89,100,33,77,55);*/
+
+		/*function name(){
+			var h =0;
+			for(var a =0;a<arguments.length;a++){
+				h+=arguments[a];//+=是叠加的功能
+			}
+			document.write(h);
+		}
+		name(22,12,34,89,100,33,77,55);*/
+	</script>
+</head>
+<body>
+	<div id="name"></div>
+</body>
+</html>

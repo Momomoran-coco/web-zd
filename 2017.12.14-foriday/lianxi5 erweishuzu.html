@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二维数组</title>
+	<script>
+		/*var a =[
+			[1,2,3,4,5,6,],
+			[2,3,4,5,6,7,8],*/
+  /* 第二种 var a =new Array(
+			new Array(3,4,5,6,7,8,9),
+			new Array(4,5,6,7,8,9,10),
+			new Array(5,6,7,8,9,10,11),)*/
+			// ]
+		// alert(a[0][5]); 弹出
+		//第一个for循环控制的是有几行alert(a.length);
+		//书写的顺序
+		function sh(a){
+			for(var i=0;i<a.length;i++){
+				// 第二个for循环控制的是有几列
+				for(var j=0;j<a[i].length;j++){//j<a[i].length;  不要[i] 的话那就是默认a的数组总长度  ，里面有几个new Array 那就是列数到几，
+					// 输出a 名称下的行和列
+					document.write(a[i][j]+"  ");//document.write("第"+i+"行"+"      "+a[i][j]+"  ");
+				}
+				document.write("<br/>")
+			}
+		}
+		// 赋值
+		var b =new Array();
+		for(var c=0;c<5;c++){
+			b[c]=new Array();
+			for(var d =0;d<5;d++){
+				b[c][d]=d;
+			}
+		}
+		sh(b);//sh 里面的东西是书写的顺序，b里面的是赋值，
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

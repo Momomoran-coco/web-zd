@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面元素 对象</title>
+	<style>
+		.na{width: 100%;height: 100px;border: blue 1px solid;}
+	</style>
+	<script>
+		window.onload=function(){
+		// var ai =document.getElementById("idx").innerHTML;
+		// alert(ai);
+
+		/*var a2 =document.getElementById("show").innerText;// innerText 只能读取文本
+		alert(a2);*/
+		/*var a3 =document.getElementById("dx").innerText="<p style='color:red;'>你好，贵阳好美！</p>";  //只读取innerText里面的所有内容，*/
+
+		//获取对象
+		var getId =document.getElementById("dx");
+		//对对象id添加一个边框
+		// getId.style.border="1px solid red";
+		// //文字居中
+		// getId.style.textAlign="center";
+		getId.className="na";
+
+		}
+	</script>
+</head>
+<body>
+	<!-- <div id="idx"><b>贵阳天气一点都不好</b></div> -->
+	<!-- <div id="show"><b>贵阳天气一点都不好</b></div> -->
+	<div id="dx"><b>贵阳天气一点都不好</b></div>
+
+</body>
+</html>

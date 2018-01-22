@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选 全不选 反选</title>
+</head>
+<body>
+	<input type="checkbox" name="a1">乒乓球
+	<input type="checkbox" name="a1">橄榄球
+	<input type="checkbox" name="a1">排球
+	<input type="checkbox" name="a1">足球
+	<input type="checkbox" name="a1">溜溜球
+	<input type="checkbox" name="a1">篮球
+	<input type="checkbox" name="a1">羽毛球
+	<input type="checkbox" name="a1">小皮球
+
+	<br/><input type="button" value="全选" onclick="qx();"/>
+	<input type="button" value="反选"  onclick="fx();"/>
+	<input type="button" value="全不选" onclick="qbx();"/>
+	<script>
+		//找到所有的name值为a1的元素
+		var getAll = document.getElementsByName("a1");
+		// alert(getAll);
+		//全选的方法
+		function qx(){
+			//循环找到所有的name值为a1的元素，然后分别给他们添加一个属性checked;
+			for(var i =0; i<getAll.length;i++){
+				getAll[i].checked="checked";//checked 或者true都可以  checked继承
+			}
+		}
+		function qbx(){//全不选
+			//循环找到所有的name值为a1 的元素，然后分别给他们添加一个属性false;
+			for(var j =0;j<getAll.length;j++){
+				getAll[j].checked=false;//false 全不选
+			}
+		}
+		function fx(){//反选
+			for(var h =0;h<getAll.length;h++){
+				if(getAll[h].checked==true)
+					{ getAll[h].checked=false; }
+				else{getAll[h].checked=true}// 选中的为不选  不选的为选中  互换
+			}
+		}
+	</script>
+</body>
+</html>

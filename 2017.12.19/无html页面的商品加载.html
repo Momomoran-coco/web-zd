@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无html页面的商品加载</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{width: 500px;height: 160px;border: green solid 1px;margin:0 auto;}
+		#q{width: 100px;height:150px;border: red solid 1px;float: left;margin: 10px;}
+		#img{width: 100px;height: 130px;background:url("juzi.png");background-size: 100% 100%;}
+		p{width: 100px;height: 20px;}
+	</style>
+</head>
+<body>
+	<div id="box" onclick="name1();"></div>
+	<script>
+		var html ="";
+		window.onload=function(){
+		var str ='<div id ="q"><div id ="img"></div><p>写点什么</p></div>';
+		var oBox =document.getElementById("box");
+		for(var i=1;i<5;i++){
+			html += str //给一个变量，然后方便电脑识别，防止电脑卡顿
+			}
+		}oBox.innerHTML =html
+		function name1(){
+		var str ='<div id ="q"><div id ="img"></div><p>写点什么</p></div>';
+		var oBox =document.getElementById("box");
+		for(var i=1;i<5;i++){
+			html += str
+			}
+		}oBox.innerHTML =html
+
+	</script>
+</body>
+</html>

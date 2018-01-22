@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取随机的四位数</title>
+	<style>
+		*{padding: 0;margin: 0;text-align: center;line-height: 300px;font-size: 35px;}
+		#a{width: 500px;height: 300px;background: #ccc;margin: 20px auto;}
+		input{width: 200px;height: 100px;}
+	</style>
+	
+</head>
+<body>
+	<div id="a"></div>
+
+	<input type="button" value="获取随机数" onclick="name1();">
+</body>
+	<script>
+			function name1(){
+				var c =parseInt(Math.random()*10000);
+				if(c<1000){c =parseInt(Math.random()*10000);}
+				document.getElementById("a").innerHTML =c;
+			}
+	</script>
+</html>

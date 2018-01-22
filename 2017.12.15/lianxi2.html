@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>年月日</title>
+	<script>
+		
+		window.onload=function(){
+					//通过id来分别获取年月日的select对象
+			var y =document.getElementById("year");
+			var m =document.getElementById("month");
+			var d =document.getElementById("dat");
+				//给m添加12个月
+			for(var i=1;i<=12;i++){
+					m.innerHTML+="<option value="+i+">"+i+"</option>";
+				}
+				//给年份自动赋值  范围 步长
+			for(var j=2020;j>=1990;j--){
+					y.innerHTML+="<option value="+j+">"+j+"</option>";
+			}
+			for(var k=1;k<=31;k++){
+					d.innerHTML+="<option value="+k+">"+k+"</option>";
+			}
+
+		}
+
+		function changevalue(){
+			//当年的value值改变的时候，让年份默认为1月份，其中seletedIndex 是设置索引
+			document.getElementById("month").selectedIndex=0;
+			document.getElementById("dat").selectedIndex=0;
+		}
+		 
+		//天数的数组
+		var dateS = new Array(0,31,28,31,30,31,30,31,31,30,31,30,31);
+		// 月份
+		function getD(){
+			var y =document.getElementById("year").value;
+			if(y%4==0&&y%100!=0||y%400==0){
+				dateS[2]=29;
+				
+			}
+			var m =document.getElementById("month").value;
+			// 先清除所有天数
+			document.getElementById("dat").length=0;
+			//给当月添加天数
+			for(var i =1;i<=dateS[m];i++){
+				document.getElementById("dat").innerHTML+="<option>"+i+"</option>";
+			}
+		}
+	</script>
+</head>
+<body>
+	年：<select id="year" onchange="changevalue();">
+			<!-- <option value="2017">2017</option>
+			<option value="2016">2016</option>
+			<option value="2015">2015</option>
+			<option value="2014">2014</option>
+			<option value="2013">2013</option>
+			<option value="2012">2012</option> -->
+	</select>
+	月：<select id="month" onchange="getD();"></select>
+	日：<select id="dat">
+			
+		</select>
+	</body>
+</html>
