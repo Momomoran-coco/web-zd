@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom元素的增删改查</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		#box{width: 500px;height: 200px;background: red;}
+		#sp{padding: 20px;background:pink;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		我是父级
+		<span id="sp">我是子级</span>
+	</div>
+	<script>
+		//删除元素，结合parentNode
+			/*var osp =document.getElementById("sp");
+			// osp.parentNode.removeChild(osp);//删除粉色的东西
+		
+			var obox =document.getElementById("box");  //第二种方法
+			obox.removeChild(osp);*/
+
+		var obox =document.getElementById("box");
+		//查看节点类型
+		// console.log(obox.nodeType);//1表示的是元素节点
+		// console.log(obox.nodeName);//nodeName表示的是大写的标签名称
+		console.log(obox.childNodes[0].nodeType); //   文本节点
+		console.log(obox.childNodes); // 节点
+	</script>
+</body>
+</html>

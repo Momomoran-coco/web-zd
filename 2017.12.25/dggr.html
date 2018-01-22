@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标右击事件</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{width: 190px;border: 1px solid black;box-shadow: 0 0 5px 2px gray;position: absolute;display: none;}
+		#box li{line-height: 30px;list-style: none;}
+		#box li:hover{background:#999;}
+	</style>
+</head>
+<body>
+	<ul id="box">
+		<li>菜单</li>
+		<li>设置</li>
+		<li>查看</li>
+		<li>复制</li>
+		<li>粘帖</li>
+	</ul>
+	<script>
+		var obox =document.getElementById("box")
+		console.log(obox);
+		document.oncontextmenu =function(event){
+			var evt =event ||window.event;//做浏览器兼容问题
+			var x =evt.clientX +"px";//获取X的坐标值
+			var y =evt.clientY +"px";//获取Y的坐标值
+			obox.style.display ="block";
+			obox.style.top =y;
+			obox.style.left =x;
+			return false; // 隐藏默认的右键菜单栏 
+		}
+		//左键点击隐藏
+		document.onclick =function(){
+			obox.style.display ="none"
+		}
+	</script>
+</body>
+</html>

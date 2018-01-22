@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>进度条</title>
+	<style>
+		*{padding: 0;margin: 0}
+		#box{width: 200px;height: 30px;border: 1px solid black;border-radius: 5px;margin: 200px auto;position: relative;}
+		#line{width: 80px;height: 30px;background: pink;border-radius: 5px;float: left;}
+		#per{position: absolute;top:0;left:90px;line-height: 30px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="line"></div>
+		<span id="per">0%</span>
+	</div>
+	<script>
+		var obox =document.getElementById("box");
+		// console.log(obox.offsetHeight);
+		var oline =document.getElementById("line");
+		var oper =document.getElementById("per");
+
+		var timer;
+		var width =0;
+
+		function b(){
+			if(width>=obox.offsetWidth-2){//obox.offsetWidth  复合子的宽度
+				clearInterval(timer);
+			}else{
+				width++;
+				oline.style.width = width +"px";
+
+				//document.getElementById("per").innerHTML = parseInt(width/200*100) +"%";   //第一种方法
+				//oper.innerHTML = parseInt(width/200*100) +"%";   //第一种方法 或者
+				//document.getElementById("per").innerHTML = parseInt(width/(obox.offsetWidth-2)*100) +"%";  //第二种方法
+				oper.innerHTML = parseInt(width/(obox.offsetWidth-2)*100) +"%";  //第二种方法  或者
+			}
+		}
+		timer = setInterval(function(){
+			b()
+		},30);
+
+
+	</script>
+</body>
+</html>

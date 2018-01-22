@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//存cookie
+//			document.cookie="name=clfv;path=/";
+//			document.cookie="xiao=ming";
+			
+			//设置过期时间
+			var name ="lang";
+			var val ="ming";
+			var d =new Date();
+			d.setDate(d.getDate()+1);
+			document.cookie =name+"="+val+";expires="+d; //expires 设置过期时间
+			document.cookie =name+"="+val+";expires="-1;
+			
+			//封装cookie
+			function setCookie(name,val,expi){
+				var d =new Date();
+				d.setDate(d.getDate()+expi);
+				document.cookie =name+"="+val+";expires="+d;
+			}
+			setCookie("123","321",2);
+			
+
+			function getCookie(name){
+				var cooks =document.cookie.split(";")
+				var n;
+				for(var i=0;i<cooks.length;i++){
+					n =cooks[i].split("=")
+					if(name==n[0]){
+						console.log(n[1]);
+					}
+				}
+			}
+			getCookie("123")
+
+		</script>
+	</body>
+</html>

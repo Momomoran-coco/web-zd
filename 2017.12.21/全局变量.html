@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局变量</title>
+</head>
+<body>
+	<input type="button" value="百度一下，你就知道" id="a"/ >
+	<input type="button" value="刷新" id="a1"/ >
+	<script>
+		var obtn =document.getElementById("a");
+		obtn.onclick =function(){
+			window.location.href ="https://www.baidu.com"
+		}
+
+		var obtm =document.getElementById("a1");
+		obtm.onclick =function(){
+			window.location.reload();//重载
+		}
+
+		var name=window.navigator.appName;//返回获取当前浏览器的名称 网景浏览器
+		var ver =window.navigator.appVersion;//获取当前浏览器的版本号
+		var plt =window.navigator.platform; //计算机的操作系统
+		var user =window.navigator.userAgent;
+		console.log(user);
+		//以上一同以逐渐被抛弃
+		
+	</script>
+</body>
+</html>

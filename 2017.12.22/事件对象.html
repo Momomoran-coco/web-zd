@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+	<style>
+		*{margin:0;padding: 0;}
+		#box{width: 300px;height: 300px;background: pink;}
+		#grand{}
+	</style>
+</head>
+<body>
+	<div id="grand">
+		<div id="box">
+			<input type="button" value="点击事件" id="but">
+		</div>
+	</div>
+	<script>
+		var obtn =document.getElementById("but");
+		var obX =document.getElementById("box");
+		var ogrand =document.getElementById("grand");
+		obtn.onclick =function(event){
+			//console.log(event);
+			var evt =event||window.event;
+			evt.stopPropagation ? evt.stopPropagation():evt.cancelBubble=true;//用来阻止冒泡，不然会出现很多个，至少两个
+			var selfx =evt.offsetX;//获取自身的点击位置坐标X值
+			var selfy =evt.offsetY;//获取自身的点击位置坐标Y值
+			//console.log("自身内点击坐标"+"("+selfx+","+selfy+")");
+			console.log("我是子函数的点击事件");
+		}
+		obX .onclick =function(){
+			console.log("我是子函数的点击事件");
+		}
+		ogrand .onclick =function(){
+			var evt1 =event||window.event;
+			evt1.stopPropagation ? evt1.stopPropagation():evt1.cancelBubble=true;//用来阻止冒泡，不然会出现很多个，至少两个
+			console.log("我是子函数的点击事件");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录验证</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{width: 600px;height: 200px;border:1px solid red;margin: 20px auto;}
+		#box div{height: 50px;margin: 20px 0;}
+		.la{
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+			padding-right: 10px;
+		}
+		#box div input{
+			width: 200px;
+			height: 30px;
+		}
+
+		.show{color: red;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div>
+			<label class="la">用户名</label>
+			<input id ="use" type="text" placeholder="请输入用户名"/>
+			<label class="show" id="pwd-tip">*</label>
+		</div>
+		<div>
+			<label class="la">密码</label>
+			<input id="MI" type="password" placeholder="请输入密码"/>
+			<label class="show" id="password">*</label>
+		</div>
+		<div align="center">
+			<button style="padding: 5px 10px;" id="btn">登录</button>
+		</div>
+	</div>
+	<script>
+		var Ousername =document.getElementById("use");//输入用户名
+		var oY  =document.getElementById("pwd-tip");//提示右
+
+		var Out  =document.getElementById("MI");
+		var pW  =document.getElementById("password");//密码
+
+		var Obtn =document.getElementById("btn");
+
+		//声明数组 存储每个框的验证结果
+		var arr =[false ,false];
+		//验证用户名
+		Ousername.onblur = function(){
+		 	var Ouvalue = Ousername.value;
+		 	var reg =/^[a-z,A-Z]\w{5,11}$/g;
+		 	if(reg.test(Ouvalue)){
+		 		arr[0] = true;//将结果存入数组
+		 		oY.innerHTML ="*验证通过";
+		 		oY.style.color ="green";
+		 	}else{
+		 		arr[0] = false;//将验证结果存入数组
+				oY.innerHTML ="*请输入6-12位数字和英文";
+		 		oY.style.color ="red";
+		 	}
+		 }
+
+		 //验证密码
+		 Out.onblur =function(){  //onblur  失焦
+		 	var outvalue =Out.value;
+		 	var fanwei =/^[a-z,A-Z]\w{2,5}$/g;
+		 	if(fanwei.test(outvalue)){
+		 		arr[1] = true;
+		 		pW.innerHTML ="*验证通过";
+		 		pW.style.color ="green";
+		 	}else{
+		 		arr[1] = false;
+				pW.innerHTML ="*请输入3-6位数字和英文";
+		 		pW.style.color ="red";
+		 	}
+		 }
+		 // 点击事件
+		 Obtn.onclick =function(){
+		 	if(arr[0]==true&&arr[1]==true){
+		 		window.location.href="https://www.baidu.com"
+		 	}else{
+		 		alert("请核对您输入的信息！！！");
+		 		Ousername.value="";
+		 		Out.value="";
+		 	}
+		 }
+
+		 //验证邮箱   固定电话：023-71481759  （8-11位）
+	</script>
+</body>
+</html>

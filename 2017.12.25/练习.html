@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{padding: 0;margin: 0;}
+		#box{width: 500px;height: 200px;background: red;}
+		#sp{padding: 20px;background:pink;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		我是父级
+		<p is ="p">你好 ,都是子级</p>
+		<span id="sp">我是子级</span>
+	</div>
+	<script>
+		var obox =document.getElementById("box");
+		console.log(obox.childNodes[1].childNodes[0].nodeValue);
+		console.log(obox.childNodes[0].nodetype);
+	</script>
+</body>
+</html>

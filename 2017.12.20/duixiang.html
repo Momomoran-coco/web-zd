@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+	<script>
+		// 对象  第一种命名
+		/*var obj =new Object();//Object  O必须是大写
+		console.log(obj);
+		//对像字面量  第二种
+		var obj2 ={}
+		console.log(obj2);*/
+
+		//
+		/*var obj3 ={
+			name :"小芳",
+			age :"22",
+			sex :"男",
+			sleep :function(){
+				var name = this.name;
+                console.log(name);//括号里面的有name直接是name值，
+
+			}
+		}
+		obj3.sleep();*/
+		// obj3.name ="8年级";//有的话就是替换内容，没有就是新增一个东西
+		// var name =obj2.name;   有误
+		/*var a ={
+			name:"yiyi",
+			age:"22",
+			sex:"女",
+			nr:"",
+			sleep:function(){
+				console.log(this.name,this.age,this.sex,this.nr);
+			}
+		}
+		a.sleep();*/
+
+		//实时获取
+		/*var date =new Date();
+		var year =date.getFullYear();//年
+		var month =date.getMonth()+1;// 月
+		var d =date.getDate();//天  号数
+		var day =date.getDay();//星期
+		var time =date.getTime();//获取到距离到1970年的毫秒数
+		var min =date.getMinutes();//分
+		var sec =date.getSeconds();//秒
+		console.log(sec);*/
+
+		//获取实时年月日
+		/*function a1(){
+		var date =new Date();
+		var year =Bet(date.getFullYear());//年
+		var month =Bet(date.getMonth()+1);// 月
+		var d =Bet(date.getDate());//天  号数
+		var h =Bet(date.getHours());
+		var m =Bet(date.getMinutes());
+		var sec =Bet(date.getSeconds());
+		var q =year+"年"+month+"月"+d+"日"+h+":"+m+":"+sec;
+		document.getElementById("b").innerHTML=q;//  可以起到覆盖的作用
+		}
+		setInterval("a1()",1000)//1000毫秒    定时轴
+
+		function Bet(num){
+			if(num<10){return "0"+num}
+			else{return num};
+		}
+*/
+		var b1 ="sjhlsjdlgjldjg"
+		var str1 =b1.split("j",1).join("*");//x相当于用j来分割，然后用*来代替 ,1表示的是以j分割后的形成的数组的下标，数字之前的数字可以
+		console.log(str1);
+	</script>
+	<div id="b"></div>
+</body>
+</html>

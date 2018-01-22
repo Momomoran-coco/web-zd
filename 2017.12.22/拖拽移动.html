@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽移动</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#a{width: 300px;height: 100px;background: pink;}
+	</style>
+</head>
+<body>
+	<div id="a">你来打我呀！</div>
+	<script>
+		var A =document.getElementById("a");
+			A.onmousedown =function(event){
+				
+				onmousemove =function() {
+					var evt =event||window.event;
+					//当前点击位置相对屏幕的坐标
+					var a =evt.screenX;
+					var b =evt.screenY;
+					console.log("当前点击位置相对浏览器的坐标"+a+":"+b);
+
+
+				};
+			};
+		
+	</script>
+</body>
+</html>

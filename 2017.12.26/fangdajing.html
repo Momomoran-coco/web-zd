@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜效果</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{width: 1000px;height: 1000px;border:black solid 1px;}
+		#a{width: 300px;height: 300px;border: 1px solid red;background: url("jianbain.gif");background-size: 100% 100%;float: left;position: relative;}
+		#q6{width: 300px;height: 300px;z-index:11;position: absolute;}
+		#b{width: 50px;height: 50px;background:rgba(3,2,26,0.3);position: absolute;z-index: 10;}
+		#a1{width: 300px;height: 300px;border: 1px solid red;float: right;overflow: hidden;}
+		#a1 img{width: 600px;height: 600px;position: relative;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="a">
+			<div id="q6"></div><!--
+			必须加上，不然还是会抖动，这是浏览器解析机制存在的一个bug> -->
+			<div id="b"></div><!-- 小灰块-->
+		</div>
+		<div id="a1">
+			<img src="jianbain.gif" id="rig">
+		</div>
+	</div>
+	<script>
+		var A =document.getElementById("a");
+		var B =document.getElementById("b");
+		var oBigimg=document.getElementById("a1");
+		var oRight=document.getElementById("rig");
+		A.onmousemove = function(event) {
+			var evt =event||window.event;//
+				//	求灰块坐标
+				var x =evt.offsetX - (B.offsetWidth/2);
+				var y =evt.offsetY - (B.offsetHeight/2);
+
+				//检测坐标
+				if (x<0) {
+					x=0;
+				}else if(x>=A.offsetWidth- B.offsetWidth){
+					x = A.offsetWidth- B.offsetWidth
+				}
+
+				if(y <0){
+					y= 0
+				}else if(y>=A.offsetHeight- B.offsetHeight){
+					y = A.offsetHeight- B.offsetHeight
+				}
+				B.style.top=y+"px";//距离上面的距离是等于y轴的距离
+				B.style.left=x+"px"; //距离左面的距离是等于x轴的距离
+				//求移动比例
+				var percentx =x/(A.offsetWidth- B.offsetWidth);
+				var percenty =y/(A.offsetHeight- B.offsetHeight);
+				//console.log(percentx + ":" + percenty);
+
+				//根据比例求大图位置
+				var bigx = percentx * (oBigimg.offsetWidth - oRight.offsetWidth);
+				// -percentx * (oRight.offsetWidth -oBigimg.offsetWidth )
+				var bigy = percenty * (oBigimg.offsetHeight - oRight.offsetHeight);
+				// -percentx * (oRight.offsetHeight -oBigimg.offsetHeight )
+				//console.log(bigx + ":" + bigy);
+
+				//设置大图位置
+				oRight.style.top = bigy + "px";
+				oRight.style.left = bigx + "px";
+
+
+		}
+	</script>
+</body>
+</html>

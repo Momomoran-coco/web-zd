@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘码表触发的事件</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#a1{width: 200px;height: 50px;}
+	</style>
+</head>
+<body>
+	<textarea id="a1"></textarea>
+	<script>
+		var oa =document.getElementById("a1");
+		oa.onkeypress=function(event){
+			var evt =event||window.event;
+			if(evt.keyCode==32){  //&&evt.shiftKey或者并上 加 shift键
+				console.log("nishdf");
+			}
+		}
+	</script>
+</body>
+</html>

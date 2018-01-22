@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="box" class="div" data-id="001">
+		我是div
+		<span id="sp">
+
+		</span>
+	</div>
+</body>
+<script>
+	var oBox =  document.querySelector(".div");
+	//获取元素的属性值
+	var box_class = oBox.getAttribute("data-id");
+	//设置元素的属性值
+	oBox.setAttribute("class" , "class-box");
+	oBox.setAttribute("data-data","我是商品1");
+
+	//删除属性
+	oBox.removeAttribute("id")
+	oBox.removeAttribute("data-id")
+	//console.log(box_class)
+
+	//获取元素的子元素，返回集合
+	var child = oBox.children;
+	//console.log(child)
+
+	//获取元素的标签名
+	//console.log(oBox.tagName)
+
+	//获取class名
+	console.log(oBox.className)
+	
+	oBox.title = "我是div"
+	
+</script>
+<html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		#ml{width: 300px;height: 200px;background:pink;}
+
+	</style>
+</head>
+<body>
+	<div id="ml"></div>
+	<script>
+		var obox =document.getElementById("ml");
+		obox.onclick =function(){
+			
+			var width =obox.offsetWidth;
+			var height =obox.offsetHeight;
+			console.log("自身高度："+width+":"+height);//获取自身高度
+		}
+		document.onclick =function(){
+
+			//获取浏览器可视区大小
+			var borwidth =document.body.clientWidth;
+			var borheight =document.body.clientHeight;
+			console.log("浏览器可视区宽高："+borwidth+":"+borheight);//获取自身高度
+
+			//屏幕可视区的宽高
+			
+			console.log("屏幕可视区宽高："+screen.width+":"+screen.height);//获取自身高度
+		}
+		
+		//清除事件
+		timer = setTimeout(function(){
+			obox.onclick ="";
+			document.onclick ="";
+			console.log("已清除");
+		},3000);
+
+	</script>
+</body>
+</html>

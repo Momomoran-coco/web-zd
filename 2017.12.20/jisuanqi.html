@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+</head>
+<body>
+	<input type="text" placeholder="请输入数字" id="a"/>
+	<select name="" id="w">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" placeholder="请输入数字" id="b"/>
+	<input type="button" value="计算" id="c" onclick="streen();"/>
+	<input type="text" id="t"/>
+	<script>
+		streen = function(){
+			var z = Number(document.getElementById("a").value);
+			var z1 = document.getElementById("w").value;//符号
+			var z2 = Number(document.getElementById("b").value);
+			var z4 = document.getElementById("c").value;
+			if(isNaN(z)||isNaN(z2)){alert("请输入数字");//判断是不是NaN 
+				a.value ="";
+				b.value ="";}//  清空 是找最初的那个空间名称
+			else{switch(z1){
+				case "-":document.getElementById("t").value=z-z2;break;//console.log(z-z2); 必须放在brenk前面，怒然识别不出来
+				case "+":document.getElementById("t").value=z+z2;break;
+				case "*":document.getElementById("t").value=z*z2;break;
+				case "/":document.getElementById("t").value=z/z2;break;
+				//default:document.getElementById("t").innerHTML("暂时不支持该运算");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

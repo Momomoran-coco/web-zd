@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业聊天框</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		#box{width: 500px;height: 600px;margin: 5px auto;border:black solid 1px;}
+		#show{width: 480px;height: 300px;border: 1px solid black;overflow-y: auto;margin: 15px auto;}
+		#show li{list-style: none;margin: 10px;overflow: hidden;}
+		li span{padding: 5px;max-width: 400px;font-size: 20px;border-radius: 5px;color: white;}
+		.left{float: left;background: gray;}
+		.right{float: right;background: green;}
+		#text{width: 480px;height: 200px;font-size: 20px;margin: 15px 10px;}
+		#btn{float: right;margin-right: 10px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul id="show">
+			<li><span class="left">hello?</span></li>
+			<li><span class="left">hello?在吗?</span></li>
+			<li><span class="right">啥？</span></li>
+			<li><span class="left">有人吗？</span></li>
+			<li><span class="left">喂喂喂?</span></li>
+			<li><span class="right">hello?对不完成？</span></li>
+		</ul>
+			<textarea id="text"></textarea>
+			<input type="button" value="发送" id="btn">
+	</div>
+	<script>
+		var oul =document.getElementById("show");
+		var otext =document.getElementById("text");
+		var obtn =document.getElementById("btn");
+		//给按钮添加点击事件
+		obtn.onclick =function(){
+			var val =otext.value;
+			//console.log(val);//测试无误
+			var Li =document.createElement("li");//创建一个新的值
+			var Span =document.createElement("span"); //创建一个新的值
+			Span.innerHTML = val; //Span的值是  var val =otext.value;  不可挪上去，只能单独写；
+			Span.setAttribute("class","right"); //setAttribute建立一个新的属性或者替换，class的属性存在 所以替换为right，
+			Li.appendChild(Span);//只能加标签，相当于给一个空的空间里面加东西，
+			oul.appendChild(Li);// 只能加标签，相当于给一个空的空间里面加东西，
+
+			otext.value ="";
+			Li.scrollIntoView();//滚动到实现之内，自动滚动，
+		}
+	</script>
+</body>
+</html>

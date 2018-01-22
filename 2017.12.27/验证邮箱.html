@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证邮箱</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{width: 600px;height: 200px;border:1px solid red;margin: 20px auto;background:linear-gradient( 90deg,white,gray,white)
+}
+		#box div{height: 50px;margin: 20px 0;}
+		.Email{
+			display: inline-block;
+			width: 100px;
+			text-align: left;
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div>
+			<label class="Email">邮箱</label>
+			<input type="text" id="a" placeholder="请输入qq邮箱号码">
+			<label id="ti">*</label>
+		</div>
+		<div>
+			<label class="Email">固定电话</label>
+			<input type="text" id="B" placeholder="请输入8-11位的数字">
+			<label id="tis">*</label>
+		</div>
+	</div>
+	<script>
+		var A =document.getElementById("a"); //输入的内容
+		var Ti =document.getElementById("ti"); //提示
+
+		var b =document.getElementById("B"); //输入的内容
+		var TIS=document.getElementById("tis");//提示
+
+		var arr =[false ,false];
+		A.onblur=function(){
+			var OA = A.value;
+		 	var reg =/^\w{8,20}@[a-z]{2,4}.(com|cn)$/g;
+		 	if(reg.test(OA)){
+				arr[0] = true;//将结果存入数组
+		 		Ti.innerHTML ="*验证通过";
+		 		Ti.style.color ="green";
+		 	}
+		 	else{
+		 		arr[0] = false;//将验证结果存入数组
+				Ti.innerHTML ="*请输入8-16位数字和英文";
+		 		Ti.style.color ="red";
+		 	}
+		}
+		b.onblur=function(){
+			var OA1 = b.value;
+		 	var reg1 =/^0[1-9][1-9]-\d{8,11}$/g;
+		 	if(reg1.test(OA1)){
+				arr[1] = true;//将结果存入数组
+		 		TIS.innerHTML ="*验证通过";
+		 		TIS.style.color ="green";
+		 	}
+		 	else{
+		 		arr[1] = false;//将验证结果存入数组
+				TIS.innerHTML ="*请输入8-16位数字";
+		 		TIS.style.color ="red";
+		 	}
+		}
+	</script>
+</body>
+</html>

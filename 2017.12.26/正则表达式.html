@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+	<script>
+		var ref =/花花/g;
+		var str ="花花黄岛狂,傲丹劳丹龙路";
+		var s = str.replace(ref,"绿绿");
+		//console.log(s)
+
+		var STR1 ="aaaa1dfnsf556nkAAAAApp134545";
+		var reg1 =/1/g;
+		var a = STR1.match(reg1);
+		//console.log(a);
+
+		var b =/\d/g; //       \d 代表的是数字
+		var a1 =STR1.match(b);
+		console.log(a1);//
+	</script>
+</body>
+</html>

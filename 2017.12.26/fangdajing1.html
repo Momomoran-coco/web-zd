@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜效果</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width:1000px;height: 1000px;border:1px solid red;}
+		.left{width: 400px;height: 250px;border: 1px green solid ;float: left;position: relative;}
+		.right{width: 400px;height: 250px;border: 1px green solid ;float: right;}
+		#men{width: 400px;height: 250px;position: absolute;top: 0;left: 0;z-index: 10;}/*z-index: 10;  调至层级*/
+		img{width: 400px;height: 250px;}
+		#hei{width: 50PX;height: 50PX;background:#ccc;z-index: 10;top: }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<div id="men"></div>
+			<img src="jianbain.gif">
+			<div id="hei"></div>
+		</div>
+		<div class="right">
+			<img src="jianbain.gif">
+		</div>
+	</div>
+	<script>
+//求灰块的坐标
+				var x =evt.offsetX ;//- (B.offsetWidth/2)
+				var y=evt.offsetY ;//- (B.offsetHeight/2)
+				console.log("当前坐标"+x+":"+y);
+				//检测坐标
+				if (x<0) {
+					x=0;
+				}else if(x>=A.offsetWidth- B.offsetWidth){
+					x = A.offsetWidth- B.offsetWidth
+				}
+
+				if(y <0){
+					y= 0
+				}else if(y>=A.offsetHeight- B.offsetHeight){
+					y = A.offsetHeight- B.offsetHeight
+				}		
+	</script>
+</body>
+</html>

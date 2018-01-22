@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+<script>
+	//多次替换
+	/*var reg =/坏蛋|鸭蛋|去死|基友/g;
+	var str ="你个坏蛋,你去捡鸭蛋,摔碎了,你怎么不去死啊,还是个基友";
+	var str2 =str.replace(reg,"***");
+	console.log(str2);*/
+	/*//.验证qq号：
+	var s =012442122;
+	var reg =/^[1-9]\d{3,10}$/g;
+	var a =reg.test(s); //test
+	console.log(a); //为false是不通过，为true为通过
+*/		
+	/*//如何去除空格
+	var reg =/3|\s/g;
+	var str ="1  3  1255341   124  1212";
+	var s =str.replace(reg,"");
+	console.log(str)
+	console.log(s);// 去除空格
+	console.log(str.match(reg));//match 能拿到reg里面的东西*/
+
+	var str ='<p>hdffsjf。</p><p>“psjg，你个大笨蛋。</p>    <p>  拉拉来”</p>   <p>  ，扥康啃饭可能，</p>';
+	var reg =/<[^<>]+>/g;
+	var a =str.replace(reg,"")
+	console.log(a);
+</script>
+</html>

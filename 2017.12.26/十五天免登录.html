@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>十五天免登陆</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		#box{width: 300px;height: 300px;background: #C4C3C3;margin: 10px auto;}
+		#a1{width: 260px;height: 60px;margin: 20px;}
+		#a2{width: 260px;height: 50px;margin: 10px 20px;}
+		#b{margin-left: 20px;}
+		#a3{float: right;margin-right: 20px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="text" id="a1" placeholder="请输入用户名" /><br>
+		<input type="password" id="a2" placeholder="请输入密码" /><br>
+		<input type="checkbox" id="b" value="" />15天免登陆 <br>
+		<input type="button" id="a3" value="登陆" />
+	</div>
+	<script type="text/javascript">
+		var yong =document.getElementById("a1");
+		var mi =document.getElementById("a2");
+		var deng =document.getElementById("a3");
+		var xuan =document.getElementById("b");
+		deng.onclick =function(){
+			var Yong =yong.value;
+			var Mi = mi.value;
+			function setCookie(Yong,Mi,c3){
+				var d =new Date();
+				d.setDate(d.getDate()+c3);
+				if(xuan.checked==true){
+					document.cookie =Yong+"="+Mi+";expires="+d;
+				}
+			}
+			setCookie(Yong,Mi,15)
+		}
+	</script>
+</body>
+</html>

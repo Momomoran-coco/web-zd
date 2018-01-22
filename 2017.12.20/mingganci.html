@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>敏感词</title>
+</head>
+<body>
+	<script>
+		var str ="你好啊,美女,狗狗,基友";
+		/*var newStr =str.replace("狗狗","**");
+		console.log(newStr);
+		var c = "你是一只猪猪";*/
+		
+		var arr=["狗狗","猪猪","去你的","基友"];
+		for(i =0;i<arr.length;i++){//不需要添加多余的空变量，
+			str = str.replace(arr[i],"****") //replace只能替换一次
+			
+		}
+		console.log(str);
+	</script>
+</body>
+</html>

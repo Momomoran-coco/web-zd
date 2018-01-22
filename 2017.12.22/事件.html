@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shijian</title>
+</head>
+<body>
+	<script>
+		document.onclick = function(event){
+			var evt =event||window.event;
+			//当前点击位置相对浏览器的坐标
+			var a =evt.clientX;
+			var b =evt.clientY;
+			console.log("当前点击位置相对浏览器的坐标"+a+":"+b);
+
+			//当前点击位置相对屏幕的坐标
+			var a1 =evt.screenX;
+			var b1 =evt.screenY;
+			console.log("当前点击位置相对屏幕的坐标"+a1+":"+b1);
+
+			//PageX
+		}
+	</script>
+</body>
+</html>
