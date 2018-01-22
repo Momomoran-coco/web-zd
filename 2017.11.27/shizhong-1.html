@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style>
+		*{margin: 0;padding: 0;box-sizing: border-box;}
+		.a{width: 700px;height: 700px;border: #000 solid 1px;border-radius:50%;margin: 50px auto;position: relative; }
+		hr{width: 20px;position: absolute;top: 350px;transform-origin:350px;}
+		.b1,.b6,.b11,.b16,.b21,.b26,.b31,.b36,.b41,.b46,.b51,.b56{border: solid 1px #000;}
+		.yuan{width: 20px;height: 20px;background: #000;border-radius:50%;position: absolute;top: 340px;left: 340px; }
+		.xiaohongyuan{width: 12px;height: 12px;background:red;border-radius: 50%;margin: 4px;position: relative;}
+		.shi{width: 200px;height: 4px;background: #000;position: absolute;top: 4px;left: -20px;transform-origin:26px;}
+		.fen{width: 250px;height: 2px;background: #ccc;position: absolute;top: 5px;left: -20px;transform-origin:26px;}
+		.miao{width: 300px;height:1px;background:green;position: absolute;top: 5.5px;left: -20px;transform-origin:26px;}
+		.b1{}
+		.b2{transform:rotate(6deg);}
+		.b3{transform:rotate(12deg);}
+		.b4{transform:rotate(18deg);}
+		.b5{transform:rotate(24deg);}
+		.b6{transform:rotate(30deg);}
+		.b7{transform:rotate(36deg);}
+		.b8{transform:rotate(42deg);}
+		.b9{transform:rotate(48deg);}
+		.b10{transform:rotate(54deg);}
+
+		.b11{transform:rotate(60deg);}
+		.b12{transform:rotate(66deg);}
+		.b13{transform:rotate(72deg);}
+		.b14{transform:rotate(78deg);}
+		.b15{transform:rotate(84deg);}
+		.b16{transform:rotate(90deg);}
+		.b17{transform:rotate(96deg);}
+		.b18{transform:rotate(102deg);}
+		.b19{transform:rotate(108deg);}
+		.b20{transform:rotate(114deg);}
+
+		.b21{transform:rotate(120deg);}
+		.b22{transform:rotate(126deg);}
+		.b23{transform:rotate(132deg);}
+		.b24{transform:rotate(138deg);}
+		.b25{transform:rotate(144deg);}
+		.b26{transform:rotate(150deg);}
+		.b27{transform:rotate(156deg);}
+		.b28{transform:rotate(162deg);}
+		.b29{transform:rotate(168deg);}
+		.b30{transform:rotate(174deg);}
+
+		.b31{transform:rotate(180deg);}
+		.b32{transform:rotate(186deg);}
+		.b33{transform:rotate(192deg);}
+		.b34{transform:rotate(198deg);}
+		.b35{transform:rotate(204deg);}
+		.b36{transform:rotate(210deg);}
+		.b37{transform:rotate(216deg);}
+		.b38{transform:rotate(222deg);}
+		.b39{transform:rotate(228deg);}
+		.b40{transform:rotate(234deg);}
+
+		.b41{transform:rotate(240deg);}
+		.b42{transform:rotate(246deg);}
+		.b43{transform:rotate(252deg);}
+		.b44{transform:rotate(258deg);}
+		.b45{transform:rotate(264deg);}
+		.b46{transform:rotate(270deg);}
+		.b47{transform:rotate(276deg);}
+		.b48{transform:rotate(282deg);}
+		.b49{transform:rotate(288deg);}
+		.b50{transform:rotate(294deg);}
+
+		.b51{transform:rotate(300deg);}
+		.b52{transform:rotate(306deg);}
+		.b53{transform:rotate(312deg);}
+		.b54{transform:rotate(318deg);}
+		.b55{transform:rotate(324deg);}
+		.b56{transform:rotate(330deg);}
+		.b57{transform:rotate(336deg);}
+		.b58{transform:rotate(342deg);}
+		.b59{transform:rotate(348deg);}
+		.b60{transform:rotate(354deg);}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="a">
+		<hr class="b1" />
+		<hr class="b2" />
+		<hr class="b3" />
+		<hr class="b4" />
+		<hr class="b5" />
+		<hr class="b6" />
+		<hr class="b7" />
+		<hr class="b8" />
+		<hr class="b9" />
+		<hr class="b10" />
+
+		<hr class="b11" />
+		<hr class="b12" />
+		<hr class="b13" />
+		<hr class="b14" />
+		<hr class="b15" />
+		<hr class="b16" />
+		<hr class="b17" />
+		<hr class="b18" />
+		<hr class="b19" />
+		<hr class="b20" />
+
+		<hr class="b21" />
+		<hr class="b22" />
+		<hr class="b23" />
+		<hr class="b24" />
+		<hr class="b25" />
+		<hr class="b26" />
+		<hr class="b27" />
+		<hr class="b28" />
+		<hr class="b29" />
+		<hr class="b30" />
+
+		<hr class="b31" />
+		<hr class="b32" />
+		<hr class="b33" />
+		<hr class="b34" />
+		<hr class="b35" />
+		<hr class="b36" />
+		<hr class="b37" />
+		<hr class="b38" />
+		<hr class="b39" />
+		<hr class="b40" />
+
+		<hr class="b41" />
+		<hr class="b42" />
+		<hr class="b43" />
+		<hr class="b44" />
+		<hr class="b45" />
+		<hr class="b46" />
+		<hr class="b47" />
+		<hr class="b48" />
+		<hr class="b49" />
+		<hr class="b50" />
+
+		<hr class="b51" />
+		<hr class="b52" />
+		<hr class="b53" />
+		<hr class="b54" />
+		<hr class="b55" />
+		<hr class="b56" />
+		<hr class="b57" />
+		<hr class="b58" />
+		<hr class="b59" />
+		<hr class="b60" />
+		<div class="yuan">
+			<div class="xiaohongyuan">
+				<div class="shi"></div>
+				<div class="fen"></div>
+				<div class="miao"></div>
+			</div>
+		</div>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script >
+		$(function(){
+		  function showTime(){
+			var now = new Date();
+			var s = now.getSeconds();
+			var m = now.getMinutes();
+			var h = now.getHours();
+			$(".miao").css({transform:"rotate("+(s*6-90)+"deg)"})
+			$(".fen").css({transform:"rotate("+(m*6-90)+"deg)"})
+			$(".shi").css({transform:"rotate("+(h*30-90)+"deg)"})
+		}
+			setInterval(showTime,1000);
+		})
+
+	</script>
+</body>
+</html>

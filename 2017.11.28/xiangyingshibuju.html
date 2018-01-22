@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>响应式布局</title>
+	<meta name="viewport" contert content="width=decice-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maxinmum-scala=1.0,user-scalable=no"></meta>
+	<style>
+		*{margin: 0;padding: 0;}
+		.a{height: 100px;width: 100%;background: #ccc;}
+		/*调用媒体监听器*/
+		@media only screen and (min-width: 1px) and (max-width: 640px){.a{height: 500px;background: #f00;}}
+	</style>
+</head>
+<body>
+	<div class="a"></div>
+</body>
+</html>
