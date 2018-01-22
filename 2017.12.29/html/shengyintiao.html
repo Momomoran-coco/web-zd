@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>声音条</title>
+	<script src="../jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 700px;height: 50px;margin: 200px auto;border:1px solid black;transform:rotate(180deg);}
+		.box li{width: 95px;margin-right: 5px;float: left;list-style: none;text-align:center;line-height: 50px;font-size: 30px;color: white;transform:rotate(180deg);}
+		.one{background: red;}
+		.two{background: green;}
+		.a3{background: #0f0;}
+		.a4{background: #36c;}
+		.a5{background: #06F;}
+		.a6{background: brown;}
+		.a7{background: purple;}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li class="one">7</li>
+		<li class="two">6</li>
+		<li class="a3">5</li>
+		<li class="a4">4</li>
+		<li class="a5">3</li>
+		<li class="a6">2</li>
+		<li class="a7">1</li>
+	</ul>
+<script>
+	$(function(){
+		$(".box li").hover(function() {
+			//鼠标移入
+			$(this).animate({
+				height:"200px"
+			},500).siblings().animate({
+				height:"52px"
+			},500)
+		}, function() {
+			//鼠标移出
+			$(this).animate({
+				height:"52px"
+			},500)
+		});
+	})
+</script>
+</body>
+</html>

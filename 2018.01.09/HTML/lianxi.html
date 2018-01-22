@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>洋码头</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 1000px;border:1px solid black;margin: 10px auto;}
+		.ul{width: 1000px;overflow: hidden;}
+		.li{width: 300px;height: 400px;border: 1px solid red;float: left;margin: 10px;list-style: none;}
+		.li:hover{box-shadow: 0 0 5px 3px gray;}
+		.imgbox{width: 100%;height: 280px;}
+		.imgbox img{width: 100%;height: 100%;}
+		.tip{height: 40px;overflow: hidden;}/*line-height: 30px;*/
+		.buttom{height: 30px;}
+		.buttom span{display: black;width: 100px;height: 30px;}
+		.left{float: left;color: red;}
+		.left b{font-size: 20px;}
+		.right{width:80px;height:30px;float: right;background: red;border-radius:5px;text-align: center;line-height: 30px;color: white;margin-right: 10px;}
+		.right:hover{border: 1px solid crimson;}
+	</style>
+
+</head>
+<body>
+	<div class="box">
+		<ul class="ul">
+			<!-- <li class="li">
+				<div class="imgbox">
+					<img src="../image/3二级右图片.jpg">
+				</div>
+				<div class="p">卖东西卖东西卖东西卖东西卖东西卖东西卖东西卖东西</div>
+				<div class="bottom">
+					<div class="left">￥<b>998</div>
+					<div class="right">立即购买</div>
+				</div>
+			</li> -->
+		</ul>
+	</div>
+</body>
+<script>
+	$(function(){
+		$.ajax({
+			type:"post",
+			url:"http://www.ymatou.com/guess/api/getFunProducts?callback=JSON_CALLBACK&pageIndex=1&pageSize=12&_=1515398770683",
+			async:true,
+			dataType:"jsonp",
+			jsonpCallback:"JSON_CALLBACK",
+			success:function(one){
+				//console.log(one);
+				if(one.result.Products){
+					var a1=one.result.Products;
+					var html="";
+					for(i=0;i<a1.length;i++){
+					html+='<li class="li"><div class="imgbox"><img src="'+a1[i].MainPic+'"></div><div class="p">'+a1[i].Title+'</div><div class="bottom"><div class="left">￥<b>'+a1[i].MaxPrice+'</div><div class="right">立即购买</div></div></li>'
+					// html+='<li class="li"><div class="imgbox"><img src="'+data[i].MainPic+'"></div><div class="tip">'+data[i].Title+'</div><div class="boottom"><span class="left">￥<b>'+data[i].MaxPrice+'</span><span class="right">立即抢购</span></div></li>'
+					$(".ul").html(html);
+					}
+					
+				}
+			}
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>122</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<script>
+		//console.log($);
+		//console.log($.ajax());
+		$.ajax({
+			type:"post",
+			url:"http://127.0.0.1/zhandian/2018.01.09/test/json/insts.json",
+			success:function(res){
+				console.log(res);
+			}
+		})
+	</script>
+</body>
+</html>

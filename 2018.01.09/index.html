@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jq的dom的遍历</title>
+	<style>
+		
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="grand">
+		<div class="father">
+			<div class="son1"></div>
+			<div class="son2"></div>
+			<div class="son3"></div>
+		</div>
+	</div>
+</body>
+<script>
+	$(function(){
+		// 1.parent 获取直接的父级（father）
+		var p=$(".son1").parent();
+		console.log(p);
+		// 2,partens   获取所有的父级 四个（ father，grand，body，html）
+		var p1=$(".son1").parents();
+		console.log(p1);
+		// 3，parentsUntil  表示的是bady之后的所有父级（father，grand）
+		var pst=$(".son1").parentsUntil("body");
+		console.log(pst);
+		// 4，nextUntil  表示的是son1之后的兄弟级（son2，son3）
+		var next=$(".son1").nextUntil("body");
+		console.log(next);
+		
+	})
+</script>
+</html>

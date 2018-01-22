@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script src="../jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 300px;height: 300px;background: green;margin: 100px auto;}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		$(function(){
+			$(".box").hover(function(){
+				$(this).stop().delay(2000).animate({  //delay(2000)延迟时间
+										borderRadius:"50%",
+										borderWidth:"10px",
+					},2000).animate({
+										borderRadius:"25%",
+										borderWidth:"20px",
+				},1000);
+			})
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+/*var Use=document.getElementById("use");
+var mi=document.getElementById("Mi");
+var B=document.getElementById("b");
+var A3=document.getElementById("a3");
+
+	A3.onclick = function(){
+	var Ouse =Use.value;
+	var Omi =mi.value;
+	function setCookie(Ouse,Omi,c3){
+		var d =new Date();
+		d.setDate(d.getDate()+c3);
+		if(B.checked==true){
+			document.cookie =Ouse+"="+Omi+";expires="+d;
+		}
+	}
+	setCookie(Yong,Mi,30);
+}*/

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{margin: 0;padding: 0;}
+		html,body{width: 100%;height: 100%;}
+		.box{width: 700px;height: 400px;position: absolute;
+			left:50%;top: 50%;margin-left: -350px;margin-top:-200px;}
+		.top{width:500px;height: 50px;margin: 20px auto;border:2px solid blue;}
+		.top input{width:400px;height: 50px;float: left;border: 0;font-size: 20px;;border:none;outline: none;text-indent:1ex;}
+		.top button{width: 100px;height: 50px;border:none;outline: none;background: blue;color: white;}
+		.items{width: 380px;height: auto;border: 1px solid black;list-style: none;position: absolute;left: 98px;top: 81px;padding:10px;display: none;}
+		.items li{height: 40px;line-height: 40px;border-bottom:2px solid blue;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="box">
+		<div class="top">
+			<input type="text" class="in">
+			<button class="btn">百度一下</button>
+		</div>
+		<ul class="items">
+			
+			<li>
+				<!-- <a href="https://www.baidu.com"></a> -->
+			</li>
+		</ul>
+	</div>
+	<script>
+		$(function(){
+			// 点击其他地方可隐藏
+			$(document).click(function(){
+				$(".items").css({
+					display:"none",
+				})
+			})
+			// 点击按钮之后出现的内容
+			$(".btn").click(function(){
+				one1();
+			})
+			function one1(){
+				//第一步 获取输入框的值
+				var res =$(".in").val();
+				//第二步 通过接口获取返回值
+				$.ajax({   //ajax异步
+					type:"post",
+					url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+res+"&json=1&p=3&sid=22084_1436_13548_21120_22036_22073&req=2&csor=0&cb=callbak",
+					dataType:"jsonp",
+					jsonpCallback:"callbak",
+					success:function(value){
+						//console.log(value);
+						if(value.s){
+							//有返回值，渲染页面
+							var html="";
+							for(i=0;i<value.s.length;i++){
+								var li ="<li>"+value.s[i]+"</li>";
+								html+=li;
+							}
+							var ni= $(".items").html(html)
+							$(".items").css({
+								display:"block",
+							})
+						}
+					},
+					error:function(){
+						console.log("请求失败！！！")
+					},
+					complete:function(){
+						console.log("请求完成！！！");
+					},
+				});
+			}
+
+			// 不用点击按钮自动识别的做法
+			$(".in").keydown(function() {
+				one1();
+			});
+
+			// 作a标签， 超链接，未成功
+			// $(document).click(function(){
+			// 	$(".items").css({
+			// 		display:"none",
+			// 	})
+			// })
+			// $(".items li").click(function() {
+			// 	$(".items").css({
+			// 		display:"block",
+			// 	})
+			// 	var a = $(this).length.index();
+			// 	console.log(a);
+			// });
+		})
+	</script>
+</body>
+</html>

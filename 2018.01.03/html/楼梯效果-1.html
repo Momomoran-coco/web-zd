@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>楼梯效果之一</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 100%;height: 3750px;}
+		.box div{width: 100%;height: 750px;text-align: center;line-height:750px;font-size: 100px;color: white;}
+		.one{background: red;}
+		.two{background: #210;}
+		.three{background: #250;}
+		.four{background: yellow;}
+		.five{background: blue;}
+		.btn{width: 50px;height: 300px;background: pink;position: fixed;right: 10px;top: 40%;}
+		.btn span{display: block;width: 50px;height: 59px;border-bottom: 1px solid black;text-align: center;line-height: 60px;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<div class="one">蔬菜</div>
+		<div class="two">水果</div>
+		<div class="three">衣服</div>
+		<div class="four">海鲜</div>
+		<div class="five">进口</div>
+	</div>
+	<div class="btn">
+		<span>蔬菜类</span>
+		<span>水果类</span>
+		<span>衣服类</span>
+		<span>海鲜类</span>
+		<span>进口类</span>
+	</div>
+</body>
+<script>
+	$(function(){
+		$(".btn span").click(function(){
+			var index =$(this).index();
+			//console.log(index);
+			var height =$(".box div").eq(index).offset().top;//offset 获取自身的
+			//console.log(height);
+			$(document).scrollTop(height)
+		});
+	})
+</script>
+</html>

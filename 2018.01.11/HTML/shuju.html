@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	
+</body>
+<script>
+	$(function(){
+		/*var json ={
+			"name":"huahau",
+			"age":"12",
+			"grade":"6"
+		}
+		var str =JSON.stringify(json)//字符串后的不能展开，直接console.log(json) 能展开，键值对的方式
+		console.log(str);
+		console.log(json);*/
+
+		var str='{"name":"huahau","age":"12","grade":"6"}'
+		var json =JSON.parse(str)
+		console.log(str);
+		console.log(json);
+	})
+</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>洋码头的接口练习</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 900px;height: 750px;overflow: hidden;margin: 10px auto;}
+		.box li{width: 215px;height: 350px;border: 1px solid black;float: left;list-style: none;margin:3px;overflow: hidden}
+
+		.div{width: 215px;height: 240px;}
+		.box .div img{width:215px;height:240px;}
+		.p1{width: 215px;height: 60px;}
+		.p1 a{width: 215px;height: 60px;font-size: 14px;margin: 0 auto;}
+		.btn{width: 150px;height: 40px;padding: 10px;margin-left: 32.5px;color: white;background: pink;border: none;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	
+		<ul class="box">
+			<!-- <li class="item">
+				<img src="../image/0-2.jpg">
+			</li> -->
+		</ul>
+
+	<script>
+		$(function(){
+			ong();
+			function ong(){
+				$.ajax({
+					type:"get",
+					url:"http://www.ymatou.com/guess/api/getFunProducts?callback=JSON_CALLBACK&pageIndex=1&pageSize=8&_=1515398770683",
+					dataType:"jsonp",
+					jsonpCallback:"JSON_CALLBACK",
+					success:function(value){
+						var a1=value.result.Products;
+						console.log(a1);
+						if(a1){
+							for(i=0;i<a1.length;i++){
+
+								var li =$("<li>");
+								li.attr("class","li");
+								$(".box").append(li);
+								//console.log(li);
+
+								var div=$("<div>");
+								div.attr("class","div");
+								li.append(div);
+
+								var img=$("<img>");
+								img.attr("src",a1[i].MainPic);
+								div.append(img)
+
+								var p=$("<p>"); //var p=$("<p>")表示的是添加一个P标签
+								p.attr("class","p1");//p.attr("class","p1")表示的是p里面的attr里面的标签属性  和标签的自定义名称
+								li.append(p)//li.append(p)表示的是往li里面放入p，
+								//console.log(p);
+
+								var a=$("<a>");
+								a.html(a1[i].Title);// a.html(a1[i].Title)表示的是a里面的是html的内容是数组的值
+								p.append(a);//p.append(a)表示的是往p里面放入a，
+
+								// 放入一个按钮
+								var btn=$("<button>");
+								btn.attr("class","btn");
+								btn.html("立即购买");
+								li.append(btn);
+								// var btn=$("<button>");
+								// btn.attr("class","btn");
+								// li.append(btn);
+							}
+						}
+					},
+					error:function(){
+						console.log("请求失败！！！")
+					},
+					complete:function(){
+						console.log("请求成功！！！")
+					}
+				})
+			}
+		})
+	</script>
+</body>
+</html>

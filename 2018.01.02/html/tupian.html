@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴高级版</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 1180px;height: 174px;border: 1px black solid;margin: 10px auto;overflow: hidden;}
+		/*.ul{width:1500px;height: 174px;}*/
+		.ul li{list-style: none;width: 210px;height: 174px;float: left;overflow: hidden;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<ul class="ul">
+			<li style="width: 550px;">
+				<img src="../image/12.jpg">
+			</li>
+			<li>
+				<img src="../image/13.jpg">
+			</li>
+			<li>
+				<img src="../image/14.jpg">
+			</li>
+			<li>
+				<img src="../image/16.jpg">
+			</li>
+		</ul>
+	</div>
+	<script>
+		$(function(){
+			$(".ul li").mouseenter(function(){
+				$(this).stop().animate({
+					width:"550px"
+				},500).siblings().stop().animate({
+					width:"210px"
+				},500)
+			});
+		})
+	</script>
+</body>
+</html>

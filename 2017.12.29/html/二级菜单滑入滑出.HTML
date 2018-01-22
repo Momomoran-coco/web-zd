@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二级菜单滑入和滑出</title>
+	<script src="../jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 200px;height: 80px;margin: 100px auto;}
+		.box .span{width: 200px;height: 60px;display: none;}
+		.span1{border:green solid 1px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span>我的首页</span>
+		<div class="span">
+			<div class="span1">菜单栏</div>
+			<div class="span1">工具栏</div>
+			<div class="span1">属性栏</div>
+		</div>
+	</div>
+	<script>
+		$("span").mouseenter(function(){
+			$(".span").stop().delay(1000).slideDown(500);
+		});
+		$("span").mouseleave(function(){
+			$(".span").stop().delay(1000).slideUp(500);
+		})
+	</script>
+</body>
+</html>

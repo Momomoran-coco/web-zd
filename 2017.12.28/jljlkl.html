@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jqury</title>
+	<script src="js/jquery-2.1.0.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 100px;height: 100px;background: red;margin: 20px auto;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p id="p">
+			<a class="a">我是a</a>
+			<a class="a2">我是a1</a>
+		</p>
+		<p id="p2">
+			<a class="a">我是a</a>
+			<a class="a2">我是a2</a>
+		</p>
+		<p id="p3">
+			<a class="a">我是a</a>
+			<a class="a2">我是a3</a>
+		</p>
+	</div>
+	<script>
+		//console.log($); 检测是否正确，存在
+		//window.onload=function(){}  原始写法
+
+		$(function(){ // 运用jQuery 的写法
+			//选择器
+			//1.class
+			//$(".box");
+			//console.log($(".box"));
+			//2.id
+			//console.log($("#p"));
+			//3.包含
+			//console.log($("#p a"));
+			//4.标签
+			//console.log($("div"));
+			//5.统配
+			//console.log($("p *"));//p标签下的所有标签
+			
+			//事件添加
+		/*	$(".box").click(function() {
+				console.log($(this));//指的是全部的东西，包括所有脾气
+				console.log(this);//指的是当前的对象
+			});
+
+			$(".box").hover(function(){//hover();  如果只有一个表示默认的移出移入事件是一样的；
+    			//鼠标移入事件
+    			console.log(1);
+			},function(){
+    			//鼠标移出
+    			console.log(3);
+			})*/
+
+
+			//find();
+			/*console.log($(".box").find(".a2"));
+			//children
+			console.log();*/
+
+			/*//next();
+			console.log($(".box").next()); //仅仅获取当前元素的后一个兄弟元素
+			//nextAll();
+			console.log($(".box").nextAll());//获取当前元素之后的所有兄弟元素*/
+
+			//patent()
+			//console.log($(".a2").parent("#p3").parent());
+			//这是指的是现在的这个值得父级的父级，可以添加很多的父级，一直往上找
+			//
+			//.siblings()
+			/*console.log($("#p1").siblings("#p3"));//获取当前元素的所有兄弟元素*/
+
+			//prev
+			console.log($("#p3").prev());//获取当前元素的前一个元素
+			//prevAll
+			console.log($("#p3").prevAll());//获取当前的所有兄弟元素
+
+
+
+
+		})
+	</script>
+</body>
+</html>

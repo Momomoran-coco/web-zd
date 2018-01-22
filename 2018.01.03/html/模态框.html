@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{padding: 0;margin: 0;}
+        .box{width: 100%;height:100px;background:#00ff00;}
+        .right{float:right;margin-top:20px;}
+        /*登录框样式*/
+        .login-box-mc{width:100%;height:100%;position:fixed;top:0px;background:rgba(0,0,0,0.5);}
+        .login-box{width:500px;height:300px;border: 1px solid red;background: white;position: absolute;margin: auto;top: 0;left: 0;right: 0;bottom:0;}
+        #a1{position: absolute;top: 5px;right: 5px;width: 30px;height: 30px;}
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="right">
+            <span class="login">登录</span>
+            <span>注册</span>
+        </div>
+        <div class="login-box-mc">
+            <div class="login-box">
+                <input type="button" value="X" id="a1">
+                <label>用户名：</label>
+                <input type="text" class="yong"></br>
+                <label>密码：</label>
+                <input type="password" class="mi"></br>
+                <input type="button" value="登录" class="deng">
+                <label>注册</label>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //淡入和淡出
+            $(".login").click(function() {
+                $(".login-box-mc").fadeIn(500)
+            });
+            $("#a1").click(function() {
+                $(".login-box-mc").fadeOut(500)
+            });
+            //
+            $(".deng").click(function(){
+                //获取用户名的value值
+                var c1 =document.getElementsByClassName("yong")[0];
+                var c=c1.value
+                //console.log(c)
+                //获取密码的value值
+                var b1 =document.getElementsByClassName("mi")[0];
+                var b=b1.value
+                //console.log(b)
+                $.cookie(c,b)
+            })
+            $.cookie("df","td")
+            $.cookie("df",null)
+        })
+    </script>
+</body>
+</html>

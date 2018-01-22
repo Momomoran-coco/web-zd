@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义动画</title>
+	<script src="../jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 300px;height: 300px;background: red;margin: 10px auto;}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		$(function(){
+			$(".box").hover(function(){
+				//鼠标移入
+				$(this).stop().animate({
+					borderRadius:"50%",
+					// boxShadow:"0 0 5px 5px gray"//
+					// border:"5px solid black"
+					width:"500px"
+				},2000)
+			},function(){
+				//鼠标移出
+				$(this).stop().animate({
+					borderRadius:"0"
+				},1000)
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹框登录注册</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 100%;height: 100px;background: black;color: white;overflow: hidden;}
+		.box a{padding: 20px 30px;display: inline-block;}
+		.box span{display: inline-block;float: right;margin-right:100px;background:red;}
+		/*登录框样式*/
+		.login-box-mc{width:100%;height:100%;position:fixed;top:00px;background:rgba(0,0,0,0.5);display: none;}
+		.login-box{width:500px;height:300px;border: 1px solid red;background: white;position: absolute;margin: auto;top: 0;left: 0;right: 0;bottom:0;}
+		#a1{position: absolute;top: 5px;right: 5px;width: 30px;height: 30px;}
+	</style>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<a>首页</a>
+		<a>首页</a>
+		<a>首页</a>
+		<a>首页</a>
+		<a>首页</a>
+		<a>首页</a>
+		<a>首页</a>
+		<span class="login">登录</span>
+		<span class="red">注册</span>
+	</div>
+	<div class="login-box-mc">
+		<div class="login-box">
+			<input type="button" value="X" id="a1">
+			<label>用户名：</label>
+			<input type="text"></br>
+			<label>用户名：</label>
+			<input type="text"></br>
+			<input type="button" value="登录">
+			<label>注册</label>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$(".login").click(function() {
+				 $(".login-box-mc").fadeIn(500)
+			});
+			$("#a1").click(function() {
+				$(".login-box-mc").fadeOut(500)
+			});
+		})
+	</script>
+</body>
+</html>

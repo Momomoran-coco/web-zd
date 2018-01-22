@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件</title>
+	<script src="jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 100px;height: 300px;background: red;margin: 100px auto;}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<p id="a">
+			<span class="a1"></span>
+			<span class="a2"></span>
+		</p>
+	</div>
+	<div class="box1" id="box1">
+		<p id="a3">
+			<span class="a1"></span>
+			<span class="a2"></span>
+		</p>
+	</div>
+	<div class="box3" id="box2">
+		<p id="a5">
+			<span class="a1"></span>
+			<span class="a2"></span>
+		</p>
+		<p class="name"></p>
+	</div>
+
+	<!-- 鼠标移入，移出 -->
+	<script>
+		console.log($(".box1").find("span"));
+		console.log($(".box3").children());
+/*
+		$(".box").mouseenter(function() {
+			console.log("我是移入事件");
+		});
+		$(".box").mouseleave(function(){
+			console.log("移出");
+		})*/
+		
+		// $(".box").mousemove(function(){
+		// 	console.log("移动");
+		// })
+		
+
+		// $(".box").mouseout(function(){
+		// 	console.log("非悬停");
+		// })
+		// $(".box").mouseover(function(){
+		// 	console.log("我是悬停事件");
+		// })
+		// 悬停事件和非悬停事件组合成了hover事件
+		/*$(".box").hover(function() {
+			console.log("我是进入事件");
+		}, function() {
+			console.log("我是移出事件");
+		});*/
+		//
+	</script>
+</body>
+</html>

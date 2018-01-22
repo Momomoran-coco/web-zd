@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		*{padding:0;margin: 0;}
+		.box{width: 470px;height:700px;border: black 2px solid;position: relative;margin: 10px 200px;overflow: hidden;}
+		.imgs{width: 3000px;height: 694px;list-style: none;position:absolute;left:0;}
+		.imgs li{width: 468px;height: 694px;float: left;}
+		.btns{width: 470px;height: 50px;position: absolute;top: 324px;left: 0;}
+		.btns span{display: block;width: 50px;height: 50px;background: pink;}
+		.btns span:hover{background: rgba(0,0,0,0.3);}
+		.btns span img{width: 100%;height: 100%;}
+		.left{float: left;margin-left: 20px;}
+		.right{float: right;margin-right: 20px;}
+		.yuan{width: 100px;height: 30px;border: 1px red solid;position: absolute;
+			bottom: 5%;left: 45%;display: block;display: flex;justify-content: space-between;}
+		.yuan span{width: 30px;height: 30px;background: rgba(100,100,100,0.5);border-radius:50%;text-align: center;line-height: 30px;color: white;}
+		.yuan .carrent{background: rgba(210,32,0,0.8);}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<ul class="imgs">
+			<li><img src="../image/婚戒3.jpg"></li>
+			<li><img src="../image/钻石3.jpg"></li>
+			<li><img src="../image/对戒3.jpg"></li>
+			<li><img src="../image/婚戒3.jpg"></li>
+		</ul>
+		<div class="btns">
+			<span class="left">
+				<img src="../image/you.png">
+			</span>
+			<span class="right">
+				<img src="../image/zuo (2).png">
+			</span>
+		</div>
+		<!-- 小圆圈 -->
+		<div class="yuan">
+			<span class="carrent">1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</div>
+</body>
+<script>
+	// console.log($);
+	$(function(){
+		var index=0;//下标
+		var timer;//定义定时器
+		var imgslength=$(".imgs li").length;
+		//console.log(imgslength);
+		// //右按钮的点击事件
+		$(".right").click(function(){
+			index++//下标递增
+			//console.log(111);
+			changeImg();
+			//console.log(index);
+		});
+		$(".left").click(function() {
+			index--;//下标递减
+			changeImg();
+		});
+		// 封装换图方法
+		function changeImg(){
+			// 右边界检测
+			if(index >= imgslength){
+				//console.log(233);
+				$(".imgs").css({
+					left:0
+				})
+				index=1;
+				//console.log(22);
+			}
+			//console.log(333);
+			//左边界检测
+			if(index<=-1){
+			//第一张图片的下标值是0，所以就是就是小于或者等于-1的时候
+				$(".imgs").css({
+					left:-470*(imgslength-1)//imgslength长度
+					//  imgslength =1 时 left:-470*(imgslength-1)   left等于0
+				})
+				index=imgslength-2;//
+			}
+
+			$(".imgs").stop().animate({
+				left:-470*index
+			},1000)
+			//给小圆点添加
+			$(".yuan span").eq(index).addClass("carrent").siblings().removeClass("carrent") //removeClass 移出  siblings().代表的是去除其他的兄弟
+			//console.log($(".yuan span"));
+			//if是防止超出
+			if(index>=imgslength-1){
+				$(".yuan span").eq(0).addClass("carrent").siblings().removeClass("carrent")
+			}
+		}
+		// 小圆点的点击事件
+		$(".yuan span").click(function() {
+				index = $(this).index();
+				changeImg();
+			});
+		// 设置时间轴
+		function autoPlay(){
+			timer =setInterval(function(){
+				index++;
+				changeImg();
+			},2000);
+		}
+		$(".box").hover(function(){
+			$(".btns").css({
+				display:"block"
+			})
+			clearInterval(timer)
+		},function(){
+			$(".btns").css({
+				display:"none"
+			})
+		autoPlay()
+		})
+	})
+</script>
+</html>

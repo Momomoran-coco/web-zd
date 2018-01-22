@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css
+	" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css " integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    	.btn-group button{border-radius: 0%;}
+    </style>
+  </head>
+<body>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+</div>
+<div class="row" style="background: #191D3A;">
+	<div class="container" style="height: 60px;">
+		<nav class="navbar" style="background: #191D3A;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar" style="background: white;"></span>
+	        <span class="icon-bar" style="background: white;"></span>
+	        <span class="icon-bar" style="background: white;"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><img src="image/logo.png" alt=""></a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#" style="background: #252947;width: 87px;line-height: 30px;color: #e2e4ed;">首页<span class="sr-only">(current)</span></a></li>
+	        <li><a href="#"  style="line-height: 30px;">博雅游戏</a></li>
+	        <li><a href="#"  style="line-height: 30px;">博雅新闻</a></li>
+	        <li><a href="#"  style="line-height: 30px;">关于我们</a></li>
+	        <li><a href="#"  style="line-height: 30px;">客服中心</a></li>
+	        <li><a href="#"  style="line-height: 30px;">投资者关系</a></li>
+	        <li><a href="#"  style="line-height: 4px;height:34px;color: #fff;" class="joinus">加入我们</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"  style="margin-right:-10px;line-height: 30px;border-left:none;border-right:none;color:#38b774">中文</a></li>
+	        <li><a href="#" style="line-height: 30px;border-left:none;border-right:none;">EN</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	</div>
+</div>
+<!-- 轮播图 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%;height: 460px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="image/lunbo-1.jpg">
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="item">
+      <img src="image/lunbo-2.png">
+      <div class="carousel-caption"></div>
+    </div>
+	<div class="item">
+      <img src="image/lunbo-3.jpg">
+      <div class="carousel-caption"></div>
+    </div>
+	<div class="item">
+      <img src="image/lunbo-4.png">
+      <div class="carousel-caption"></div>
+    </div>
+	<div class="item">
+      <img src="image/lunbo-5.jpg">
+      <div class="carousel-caption"></div>
+    </div>
+  </div>
+</div>
+<!-- 四合一轮播 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div style="width: 100%;height: 100px;background: green"></div>
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item">
+      <div style="width: 100%;height: 100px;background: yellow"></div>
+      <div class="carousel-caption"></div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>万年历</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 665px;height: 700px;border: 1px solid red;margin: 0 auto;}
+		.ul{width: 665px;height: 550px;}
+		.ul li{list-style: none;width: 199px;height: 117px;border: 1px solid black;margin: 10px;float: left;text-align: center;line-height: 150px;}
+		.bottom{width:640px;height:125px;border: 1px solid red;margin: 10px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="ul">
+			<li class="month">1月份</li>
+			<li class="month">2月份</li>
+			<li class="month">3月份</li>
+			<li class="month">4月份</li>
+			<li class="month">5月份</li>
+			<li class="month">6月份</li>
+			<li class="month">7月份</li>
+			<li class="month">8月份</li>
+			<li class="month">9月份</li>
+			<li class="month">10月份</li>
+			<li class="month">11月份</li>
+			<li class="month">12月份</li>
+		</ul>
+		<div class="bottom"></div>
+	</div>
+</body>
+<script>
+	$(".ul").on("click",".month",function(){
+		var arr=["一月份","二月份","三月份春暖花开","四月份","五月份","六月份","七月份","八月份","九月份","十月份","十一月份","十二月份"]
+		var li=$(this).index();
+		var b=$(this).text();
+		console.log(li);
+		var k="";
+		k+='<div>'+b+'</div><div>'+arr[li]+'</div>';//arr[li] li的下标值一样的，所以可以借来使用   '<div></div><div></div>'-->'<div>'++'</div><div>'++'</div>'-->'<div>'+b+'</div><div>'+arr[li]+'</div>'
+		$(".bottom").html(k);
+	})
+</script>
+</html>

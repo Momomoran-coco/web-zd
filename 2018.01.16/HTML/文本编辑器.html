@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css
+	" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css " integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+	<div class="container">
+		<ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages</a></li>
+		</ul>
+		<!-- <div class="row btn-group">
+			<button type="button" class="btn btn-default " aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-bold" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-italic" aria-hidden="true"></span>
+			</button>
+			
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-italic" aria-hidden="true"></span>
+			</button>
+		
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-italic" aria-hidden="true"></span>
+			</button>
+		
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-subscript" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-superscript" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-sort-by-alphabet-alt" aria-hidden="true"></span>
+			</button>
+		
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+			</button>
+		
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
+		  				<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+			</button>
+		</div> -->
+	</div>
+</body>
+<script>
+	$(function(){
+		$(".nav li").click(function(){
+			$(this).addClass("active").siblings().
+				removeClass("active")
+		});
+	})
+</script>
+</html>

@@ -1,0 +1,17 @@
+{
+	"code":"1",
+	"shopName":"web01"
+	"shoes":{
+		"sports":[{
+			"id":"1",
+			"name":"耐克",
+			"price":"￥100",
+			"smlpic":"http://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=%E5%9B%BE%E7%89%87&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3357021395,3491635869&os=332373507,1834882683&simid=0,0&pn=2&rn=1&di=6244857960&ln=1985&fr=&fmq=1515133971270_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&is=0,0&istype=0&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&objurl=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01711b59426ca1a8012193a31e5398.gif&rpstart=0&rpnum=0&adpicid=0"
+		},{
+			"id":"2",
+			"name":"361度",
+			"price":"￥200",
+			"smlpic":"http://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=%E5%9B%BE%E7%89%87&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2664351687,1345171687&os=591015715,3881086051&simid=3441707460,327079236&pn=3&rn=1&di=165858765270&ln=1985&fr=&fmq=1515133971270_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&is=0,0&istype=0&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&objurl=http%3A%2F%2Fdl.bizhi.sogou.com%2Fimages%2F2012%2F01%2F19%2F174522.jpg&rpstart=0&rpnum=0&adpicid=0"
+		}]
+	}
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		.box{width: 1300px;border:1px solid black;margin: 10px auto;}
+		.ul{width: 1300px;overflow: hidden;}
+		.li{width: 238px;height: 300px;border: 1px solid red;float: left;margin: 10px;list-style: none;padding: 10px;}
+		.li:hover{box-shadow: 0 0 5px 3px gray;}
+		.imgbox{width: 100%;height: 180px;}
+		.imgbox img{width: 100%;height: 100%;}
+		.tip{height: 90px;overflow: hidden;}/*line-height: 30px;*/
+		.bottom{height: 30px;}
+		.bottom span{display: black;width: 55px;height: 30px;text-align: center;line-height: 30px;}
+		.left{float: left;color: #FF7200;}
+		.left1{font-size: 12px;width: 10px;height: 20px;float: left;color:#FF5500;}
+		.left2{font-size: 12px;margin: 1px;}
+		.right{width:65px;font-size: 12px;margin: 1px;float: right;text-align: center;color: #999999;}
+		.right a{color: #333333;font-size: 15px;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<ul class="ul">
+			<li class="li">
+				<div class="imgbox">
+					<img src="../image/7二级右图片.jpg">
+				</div>
+				<div class="tip">
+					卖衣服卖衣服卖衣服卖衣服卖衣服卖衣服
+					卖衣服卖衣服卖衣服卖衣服卖衣服卖衣服
+					卖衣服卖衣服卖衣服卖衣服卖衣服卖衣服
+				</div>
+				<div class="bottom">
+					<span class="left">￥<b>9.9</b></span>
+					<span class="left1">5折
+					<a class="left2">|</a>
+					</span>
+					<span class="left1">包邮</span>
+					<div class="right">已售<a>507</a>份</div>
+				</div>
+			</li>
+			<!--  -->
+		</ul>
+	</div>
+</body>
+<script>
+	$(function(){
+		//console.log($);
+		//console.log($.ajax());
+		$.ajax({
+			type:"post",
+			url:"http://127.0.0.1/zhandian/2018.01.09/test/json/insts.json",
+			// async:true,
+			// dataType:"jsonp",
+			//jsonpCallback:"JSON_CALLBACK",
+			success:function(res){
+				console.log(res);
+				//var data=res.results.products;
+				//console.log(data);
+				// if(res.result.products){
+				// 	var data=res.result.products;
+				// 	var html="";
+				// 	for(var i=0;i<data.length;i++){
+				// 	html+='<li class="li"><div class="imgbox"><img src="'+data[i].mainPic+'"></div><div class="tip">'+data[i].intro+'</div><div class="boottom"><span class="left">￥<b>'+data[i].price+'</span><span class="right">立即抢购</span></div></li>'
+				// 	$(".ul").html(html);
+				// 	}
+				// }
+			}
+		})
+	})
+</script>
+</html>

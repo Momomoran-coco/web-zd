@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 800px;height: 100px;border: 1px black solid;margin: 0 auto;}
+		.box li{list-style: none;width: 100px;height: 100px;background: green;float: left;
+			line-height: 100px;font-size: 40px;text-align: center;color: yellow;position: relative;overflow: hidden;}
+		.box li div{width: 100px;height: 100px;background: red;position:absolute;top: 0;left: 100px;}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<ul class="box">
+		<li>1
+			<div></div>
+		</li>
+		<li>2
+			<div></div>
+		</li>
+		<li>3
+			<div></div>
+		</li>
+		<li>4
+			<div></div>
+		</li>
+		<li>5
+			<div></div>
+		</li>
+	</ul>
+	<script>
+		$(function(){
+			$(".box li").hover(function() {
+				$(this).stop().animate({
+					"width":"200px"
+				},500)
+			}, function() {
+				$(this).stop().animate({
+					"width":"100px"
+				},500)
+			});
+		})
+	</script>
+</body>
+</html>

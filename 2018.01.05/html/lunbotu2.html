@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 470px;height: 700px;margin:10px auto;border: red 1px solid;position: relative;}
+		.imgs{width: 470px;height: 700px;list-style: none;}
+		.imgs li{width: 470px;height: 700px;position: absolute;top: 0;left: 0;}
+		.imgs li img{width: 100%;height: 100%;}
+		.btns{width: 470px;height: 100px;position: absolute;top: 45%;left: 0;}
+		.btns span{display: block;width: 60px;height: 100px;background: red;float: left;}
+		.btns span img{
+			width: 100%;
+			height: 100%;
+		}
+		.left{
+			float: left;
+			margin-left: 20px;
+		}
+		.right{
+			float: right;
+			margin-right: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="imgs">
+			<li><img src="../image/婚戒3.jpg"></li>
+			<li><img src="../image/对戒3.jpg"></li>
+			<li><img src="../image/钻石3.jpg"></li>
+			<li><img src="../image/婚戒3.jpg"></li>
+		</ul>
+		<div class="btns">
+			<span class="left">
+				<img src="../image/you.png">
+			</div>
+			<span class="right">
+				<img src="../image/zuo (2).png">
+			</div>
+		</div>
+		<div class="yuan">
+			<span class="cortten"></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

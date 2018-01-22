@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<script src="jquery2.0/jquery-2.0.0.js"></script>
+	<style>
+		*{margin: 0;padding: 0}
+		.box{width: 726px;height:700px;border:black solid 1px;margin: 10px auto;}
+		.button{width: 50px;height: 20px;}
+		.img{width: 500px;height: 500px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<button class="hide">隐藏</button>
+		<button class="hide1">显示</button>
+		<button class="hide3">显示和隐藏</button>
+		<button class="hide4">淡入</button>
+		<button class="hide5">淡出</button>
+		<button class="hide6">淡入和淡出</button>
+
+		<button class="hide7">滑入</button>
+		<button class="hide8">滑出</button>
+		<button class="hide9">滑入和滑出</button>
+		<div class="img">
+			<img src="image/e00c12aed96bc725a546b3aac2b2f33f.jpg">
+		</div>
+	</div>
+	<script>
+		//隐藏
+		$(".hide").click(function(){
+			//$(".img").hide();//hide 隐藏
+			$(".img").hide(2000);//括号里面的内容是秒数 完成时间
+		})
+		$(".hide1").click(function(){
+			//$(".img").show();//show 显示
+			$(".img").show(2000);//括号里面的内容是秒数 完成时间
+		})
+		$(".hide3").click(function() {
+			//$(".img").toggle();//显示和隐藏同时存在
+			$(".img").toggle(1000);
+		});
+
+		//淡入
+		$(".hode4").click(function() {
+			$(".img").fadeIn();
+			//$(".img").fadeIn(1000);
+		});
+		//淡出
+		$(".hode5").click(function() {
+			$(".img").fadeOut();
+			//$(".img").fadeOut(1000);
+		});
+
+		//淡入淡出
+		$(".hide6").click(function(){
+			$(".img").fadeToggle();
+		})
+
+		//滑入
+		$(".hide7").click(function() {
+			$(".img").slideUp();
+		});
+		//滑出
+		$(".hide8").click(function() {
+			$(".img").slideDown();
+		});
+		//滑入和滑出
+		$(".hide9").click(function(){
+			$(".img").slideToggle();
+		})
+	</script>
+</body>
+</html>
