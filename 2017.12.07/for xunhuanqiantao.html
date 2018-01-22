@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for循环嵌套</title>
+	<script>
+		//打印99乘法表
+		//第一个for循环是控制行数
+		// for(var n =1;n<=9;n++){
+		// 	// document.write(n+"<br/>")
+		// 	// 第二个for循环是控制列、
+		// 	for(var l =1;l<=n;l++){
+		// 		document.write(l+"*"+n+"="+(n*l)+"&nbsp;&nbsp;")
+		// 	}
+		// 	document.write("<br/>");
+		// }
+		// 第二种左往右上倾斜
+		// for(var n =1;n<=9;n++){
+		// 	// document.write(n+"<br/>")
+		// 	// 第二个for循环是控制列、
+		// 	for(var l =9;l>=n;l--){
+		// 		document.write(l+"*"+n+"="+(n*l)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+		// 	}
+		// 	document.write("<br/>");
+		// }
+		// 左到右上 1~9；
+		// document.write("<table>")
+		
+		// for(var n =9;n>=1;n--){
+		// 	// document.write(n+"<br/>")
+		// 	// 第二个for循环是控制列、
+		// 	document.write("<tr>")
+		// 	for(var l =1;l<=n;l++){
+		// 		document.write("<td>"+l+"*"+n+"="+(n*l)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+"</td>")
+		// 	}
+		// }
+		// 	document.write("</tr>")
+		// document.write("</table>")
+		// 未完成
+		/*document.write("<table>")
+
+		for(var n =9;n>=1;n--){
+			// document.write(n+"<br/>")
+		
+			// 第二个for循环是控制列、
+			document.write("<tr>")
+			for(var l =9;l>=1;l--){
+				document.write("<td>"+l+"*"+n+"="+(n*l)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+"</td>")
+			}
+		}
+			document.write("</tr>")
+		document.write("</table>")*/
+		//星星 三角形状
+		
+		/*var num=7;
+		document.write("<table>")
+		for(var i =1;i<=num;i++){
+			document.write("<tr>")
+			for(var j =1;j<=num-i;j++){
+				document.write("<td></td>")
+			}
+			for(var x =1;x<=2*i-1;x++){
+				document.write("<td >*</td>");
+			}
+			document.write("<br/>")
+			document.write("<tr>")
+		}
+		document.write("</table>")*/
+
+		//第八题 实心菱形
+		/*var num=7;
+		document.write("<table>")
+		for(var i =1;i<=num;i++){
+			document.write("<tr>")
+			for(var j =1;j<=num-i;j++){
+				document.write("<td></td>")
+			}
+			for(var x =1;x<=2*i-1;x++){
+				document.write("<td >*</td>");
+			}
+			document.write("<tr>")
+		}
+		for(var i =1;i<=num;i++){
+			document.write("<tr>")
+			for(var j =1;j<=i-1;j++){
+				document.write("<td></td>")
+			}
+			for(var x =1;x<=13-(i-1)*2;x++){
+				document.write("<td >*</td>");
+			}
+			
+			document.write("<tr>")
+		}
+		document.write("</table>")*/
+/*第九题   空心菱形*/
+		var num=7;
+		document.write("<table>")
+		//前面空格
+		for(var i =1;i<=num;i++){//初始值  所在的行数，
+			document.write("<tr>")
+			//前面空格
+			for(var j =1;j<=num-i;j++){
+							document.write("<td>"+"</td>")}
+			
+			//
+			for(var zuihou=1;zuihou<=1;zuihou++){
+				if(i<=1){
+					document.write("<td></td>")}
+					document.write("<td>*</td>")
+			//中间空格 
+			for(var x =1;x<=2*i-1;x++){
+				document.write("<td></td>");
+			}
+			
+			}
+			//边  上右
+			if(i>=2){
+				document.write("<td>*</td>")
+			}
+			
+			document.write("</tr>")
+		}
+		//下面倒三角
+		for(var i1 =1;i1<=6;i1++){//初始值  所在的行数，
+			document.write("<tr>")
+			//空格
+			for(var j1 =0;j1<=i1-1;j1++){//前面的空格
+				document.write("<td></td>")
+			}
+			if(i1==6){document.write("<td></td>")}// 所在的行数和6进行比较，等于6的话就多一个空格
+
+			// 边  左
+			document.write("<td>*</td>")
+			//中间的空格
+			for(var x1 =1;x1<=11-2*(i1-1);x1++){
+				document.write("<td></td>")
+			}
+			//边   如果所在的行数小于6，就会输出一个星
+			if(i1<6){document.write("<td>*</td>")}
+
+			document.write("</tr>")
+		}		
+
+		document.write("</table>")
+/*
+		document.write("<table>")
+for(var hang=1;hang<=7;hang++){
+	document.write("<tr>")
+	         for(var n=1;n<=7-hang;n++){document.write("<td>"+"</td>")}
+				for(var zuihou=1;zuihou<=1;zuihou++){ 
+				            if(hang<=1){document.write("<td>"+"</td>")}
+						    document.write("<td>"+"*"+"</td>")
+				           for(var lie=1;lie<=2*hang-1;lie++){
+									document.write("<td>"+"&nbsp;"+"</td>")
+							}
+				}
+				if(hang>=2){document.write("<td>"+"*"+"</td>")}
+     document.write("</tr>")
+		
+	}
+for(var hang1=1;hang1<=6;hang1++){
+	document.write("<tr>")
+	if(hang1==6){document.write("<td>"+"</td>")}
+	for(var kong1=0;kong1<=hang1-1;kong1++){document.write("<td>"+"</td>")}
+	document.write("<td>"+"*"+"</td>")
+	for(var lie1=1;lie1<=11-2*(hang1-1);lie1++){
+		document.write("<td>"+"&nbsp;"+"</td>")
+		}
+	if(hang1<6){document.write("<td>"+"*"+"</td>")}
+	
+	document.write("</tr>")
+	}
+
+
+document.write("</table>")*/
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
