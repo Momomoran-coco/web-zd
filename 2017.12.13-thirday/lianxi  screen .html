@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>screen 对象</title>
+	<script type="text/javascript">
+		/*screen  对象*/
+		/*alert(window.screen.availHeight)   */
+			/*location 对象*/
+			/*location.href="https://www.baidu.com";  */
+			// 预加载
+			window.onload=function(){//闭包   onload——加载
+			//通过类的名字来获取对象
+			var m =document.getElementById("myid");//getElementById  无s   是因为id只能有一个，不能重名，
+			// 通过元素的属性name的集合
+			var n =document.getElementsByClassName("className")[0];//getElementsByClassName  加s是因为不知一个
+			//通过元素的属性name的集合
+			var j =document.getElementsByName("a1")[3].id;
+			//通过元素名称来找到对应的元素集合
+			var a =document.getElementsByTagName("a").length ;
+			alert(a);
+
+			}
+	</script>
+</head>
+<body>
+	<div id="myid" class="className" ></div>
+	<div id="myid1" class="className" ></div>
+	<div id="myid2" class="className" ></div>
+
+	<a href="" name="a1" id="a1"></a>
+	<a href="" name="a1" id="a2"></a>
+	<a href="" name="a1" id="a3"></a>
+	<a href="" name="a1" id="a4"></a>
+	<a href="" name="a1" id="a5"></a>
+	<a href="" name="a1" id="a6"></a>
+
+</body>
+</html>

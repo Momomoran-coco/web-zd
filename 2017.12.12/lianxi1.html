@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序 用function来实现排序</title>
+	<script>
+	
+		function R11(a){
+			//数组原来没有排序之前的顺序：
+			document.write("数组原来没有排序之前的顺序:");
+			for(var i=0;i<a.length;i++){
+				document.write(a[i]+" ");
+			}
+			// 8,94,15,88,55,76,21,39,101,302
+			//  *j j+1
+			//  *8,15,21,39,55,76,88,94,101,302
+			//  1、8,15,88,55,76,21,39,94,101,302    9
+			//  2、8,15,55,76,21,39,88,94,101,302    8
+			//  3、8,15,55,21,39,76,88,94,101,302    7
+			//  4、8,15,21,39,55,76,88,94,101,302    6
+			
+			// 第一个for循环是告诉我们是要比较多少次
+			var temp = "";
+			for(var i = 0; i<a.length-1;i++){
+				// 两个相邻的数大小进行比较
+				for(var j = 0;j<a.length-1-i;j++){
+					//两个相邻的数比较大小，如果a[j]>a[j+1]，那么a[j]和a[j+1]就需要进行交换位置
+					if(a[j]>a[j+1]){
+						temp=a[j];
+						a[j]=a[j+1];
+						a[j+1]=temp;
+					}
+				}
+			}
+			
+			document.write("<br/>数组原来有有排序之后的顺序:");
+			for(var i=0;i<a.length;i++){
+				document.write(a[i]+" ");
+			}document.write("<hr/>");
+		}
+		var a = new Array(8,94,15,88,55,76,21,39,101,302,65,20);
+		var b = new Array(8,94,15,88,55,33,21,39,101,302,65,20);
+		R11(a);
+		R11(b);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

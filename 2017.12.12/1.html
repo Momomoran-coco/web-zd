@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+	<script>
+	// 默认用户有500元；
+	var a =500;
+	function getResult(num){
+		a-=num;//卡上的余额 a=a-num  =  500-300
+		document.write("取了"+num+"元整，余额为"+a+"元整。");
+		return num;//调用方法后会返回一个num变量值，后面的代码都不会执行
+	}
+	var qian = getResult(300);//卡里面取出的现金
+	document.write("<br/>")
+
+	document.write("取了现金后有"+(qian+52));//我自己身上有52元，  200+52=252元
+
+
+	/*function demo(){
+		return "欢迎来到贵阳！";
+	}
+	var a =demo();
+	document.write(a);*/
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

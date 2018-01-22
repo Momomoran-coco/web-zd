@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<script>
+		var daxie=new Array(0,"一","二","三","四","五","六","日")
+		function show1(){
+
+			var now = new Date();//时间的函数
+			// 获取年份
+			var year = now.getFullYear();//2017
+			// 获取月份
+			var month = Bet(now.getMonth()+1);//默认0-11,所以要加1
+			// 获取日期
+			var dat =Bet(now.getDate());//返回当前的第几天
+			// 获取当前日期是星期几
+			var day = now.getDay();//返回当周的第几天
+			// 或取时分秒
+			var h =Bet(now.getHours());
+
+			var m =Bet(now.getMinutes());
+			var s =Bet(now.getSeconds());
+			// if(s<= 9){timeShow =year+"年"+month+"月"+dat+"日"+"  "+h+"："+m+" : "+"0"+s+"星期"+day;}
+
+			var timeShow =year+"年"+month+"月"+dat+"日"+"  "+h+"："+m+" : "+s+"星期"+daxie[parseInt(day)];
+			document.getElementById("show").innerHTML=timeShow;
+		}
+		setInterval("show1()",1000)//1000毫秒    定时轴
+
+		function Bet(num){
+			if(num<10){return "0"+num}
+			else{return num};
+		}
+	</script>
+</head>
+<body>
+	<div id="show" style="font-weight: bold;color:#c69;font-size:50px;text-align: center;"></div>
+</body>
+</html>

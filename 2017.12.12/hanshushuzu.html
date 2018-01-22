@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	<script>
+		function name(){
+			document.write("<table>");
+			
+			for(var i =1;i<=9;i++){
+			document.write("<tr>");
+				for(var j =1;j<=i;j++){
+					document.write("<td>"+j+"*"+i+"="+(i*j)+"</td>")
+
+				}
+			document.write("</tr>");
+			}
+		}
+		document.write("</table>");
+		name();
+
+	// 1、使用方法写菱形，方法需要有一个形式参数、用来确定菱形的行数
+	function num(b){
+		document.write("<table>");
+		for(var i =1;i<=b;i++){
+			document.write("<tr>");
+			for(var j =1;j<=b-i;j++){
+				document.write("<td></td>");
+			}
+			for(var x =1;x<=2*i-1;x++){
+				if(x==1||x==2*i-1){
+					document.write("<td>*</td>");
+				}else{
+					document.write("<td></td>");
+				}
+			}
+			document.write("</tr>");
+		}
+		for(var i =1;i<=b;i++){
+			document.write("<tr>")
+			for(var j =1;j<=i-1;j++){
+				document.write("<td></td>")
+			}0
+			for(var x =1;x<=2*(b-i)+1;x++){ //(2*b-1)-(i-1)*2 = 2*(b-i)+1
+				if(x==1||x==2*(b-i)+1){
+					document.write("<td >*</td>");
+				}else{
+					document.write("<td ></td>");
+				}
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	}
+				// var b=7;
+	num(9);  	// num(b);
+
+	//  2、使用方法和switch来编写一个算术运算(加减乘除摸)
+	 function Res(a,f,b){
+	 	switch(f){
+	 		case "+":document.write(a+"+"+b+"="+(a+b));break;
+	 		case "-":document.write(a+"-"+b+"="+(a-b));break;
+	 		case "*":document.write(a+"*"+b+"="+(a*b));break;
+	 		case "/":document.write(a+"/"+b+"="+(a/b));break;
+	 		case "%":document.write(a+"%"+b+"="+(a%b));break;
+	 		default:document.write("请输入正确的符号和数字!")
+	 	}
+	 }
+
+	 Res(10,"-",5);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

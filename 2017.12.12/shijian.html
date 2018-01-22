@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取当前时间</title>
+	<script>
+		
+			var now = new Date();//时间的函数
+			// 获取年份
+			var year = now.getFullYear();//2017
+			// 获取月份
+			var month = now.getMonth()+1;//默认0-11,所以要加1
+			// 获取日期
+			var dat =now.getDate();//返回当前的第几天
+			// 获取当前日期是星期几
+			var day = now.getDay();//返回当周的第几天  
+			// 获取时分秒
+			var h =now.getHours();
+			var m =now.getMinutes();
+			var s =now.getSeconds();
+			var timeShow =year+"年"+month+"月"+dat+"日"+"  "+h+"："+m+":"+s+"星期"+day;
+			document.write(timeShow);
+
+	</script>
+</head>
+<body style="font-weight: bold;color:#c69;font-size:50px;text-align: center;">
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>windows  对象</title>
+	<script>
+		window.onload=function(){//预加载
+		// 给div默认一个文本值为0
+		document.getElementById("show").innerHTML=0;
+		}
+		var i =0;
+		//设置定时器的方法
+		function changeValue(){//changeValue  自定义名称
+			document.getElementById("show").innerHTML=i++;
+		}
+		//定时器
+		var clear =setInterval("changeValue()",1000); // clear 自定义的名称 ，setInterval 重复调用
+
+		//消除定时器的方法
+		function ting(){
+			clearInterval(clear);//clearInterval();是清除定时器
+		}
+
+		// 重新启动定时器
+		function kai(){
+			var clear =setInterval("changeValue()",1000);//var加与不加 都不影响    直接调用复制上面的定时器指令
+		}
+
+		//跳转的网站  路径
+		function tiao(){
+			window.open("http://www.baidu.com");
+		}
+
+		//类似文本框，可以输入内容
+		var n = window.prompt("请输入你的名字：");
+			alert(n);
+	</script>
+</head>
+<body>
+	<div id="show" ></div>
+
+	<input type="button" value="开始" onclick="kai();"/>
+	<input type="button" value="暂停" onclick="ting();"/>
+	<hr/>
+	<input type="button" value="跳转百度" onclick="tiao();"/>
+</body>
+</html>

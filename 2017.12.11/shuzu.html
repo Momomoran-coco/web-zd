@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+	<script>
+		/*var arr1 = new Array("你好","你也好");//数组元素
+		var arr  =new Array();
+		//给数组的第一个元素
+		arr[0]="你好";
+		arr[1]="欢迎来到贵阳";
+		arr[2]="丝娃娃";
+		arr[3]="凯里酸汤鱼";
+		arr[4]="花千骨";
+		arr[5]="东华帝君";
+		arr[6]=15;
+		alert(arr[4]);*/
+
+
+		//给数组a 用for循环来赋值 10
+		// var a =new Array();
+		// for(var i =0;i<=10;i++){
+		// 	a[i]=i;
+		// 	document.write("arr="+i+"<br/>");
+		// }
+		// alert(arr[2])
+
+
+
+		//赋值
+		// var a =new Array();
+		// for(var i =0;i<=20;i++){
+		// 	a[i]=i;
+
+		// }
+		// a[3]="欢迎laidao!";
+		// a[5] ="北京欢迎您穿羽绒服"
+		// //访问数组a里面所有的元素
+		// for(var i =0;i<a.length;i++){
+		// 	document.write(a[i]+"  ")
+		// }
+		//输出年月日
+		var year =2020;
+		 var month =2;
+		 var  yue=new Array(0,31,28,31,30,31,30,31,31,30,31,30,31);
+		 //                 0  1  2  3  4  5  6  7  8  9 10 11  12
+		 if(year%4==0&&year%100!=0||year%400==0){
+		 		yue[2]=29;}
+
+		document.write(year+"年"+month+"月有"+yue[month]+"天！")
+		//逻辑非：是数字的时候，如果数字为0，那么取反获得结果就是真（true）,如果不是0的任何数，那么取反得到的值都是假 （flase）
+		var n =0;
+		alert(!n);
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

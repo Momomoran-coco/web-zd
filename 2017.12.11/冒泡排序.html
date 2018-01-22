@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+	<script>
+		/*var a = new Array(8,94,15,88,55,76,21,39,101,302,65,20);
+			//数组原来没有排序之前的顺序：
+			document.write("数组原来没有排序之前的顺序:");
+			for(var i=0;i<a.length;i++){
+				document.write(a[i]+" ");
+			}
+			
+			// 8,94,15,88,55,76,21,39,101,302
+			//  *j j+1
+			//  *8,15,21,39,55,76,88,94,101,302
+			//  1、8,15,88,55,76,21,39,94,101,302    9
+			//  2、8,15,55,76,21,39,88,94,101,302    8
+			//  3、8,15,55,21,39,76,88,94,101,302    7
+			//  4、8,15,21,39,55,76,88,94,101,302    6
+			
+			// 第一个for循环是告诉我们是要比较多少次
+			var temp = "";
+			for(var i = 0; i<a.length-1;i++){
+				// 两个相邻的数大小进行比较
+				for(var j = 0;j<a.length-1-i;j++){
+					//两个相邻的数比较大小，如果a[j]>a[j+1]，那么a[j]和a[j+1]就需要进行交换位置
+					if(a[j]>a[j+1]){
+						temp=a[j];
+						a[j]=a[j+1];
+						a[j+1]=temp;
+					}
+				}
+			}
+			
+			document.write("<br>数组原来有有排序之后的顺序:");
+			for(var i=0;i<a.length;i++){
+				document.write(a[i]+" ");
+			}*/
+
+		// document.write("<hr/>")
+
+		// two
+		var kong ="";
+		var b =new Array(21,15,18,101,31,51,13,10,76,96,20);
+		//数组原来没有进行排序的时候:
+		document.write("数组原来没有进行排序的时候:")
+		for(var o =0;o<b.length;o++){
+			document.write(b[o]+"  ");
+		}
+		// 第一个for循环是告诉我们是要比较多少次
+		
+		for(var o =0;o<b.length-1;o++){
+			//第二个for循环是两个相邻的数进行大小比较
+			for(var p =0;p<b.length-1-o;p++){  //代表的是比较的次数
+				//两个相邻的数比较大小，如果a[j]>a[j+1]，那么a[j]和a[j+1]就需要进行交换位置
+				if(b[p]>b[p+1]){
+					kong=b[p];//比较大小，小的在左边，  如果b[1]>b[2] ;kong=b[1]=15
+
+					b[p]=b[p+1];//b[1]=b[2]  =15
+					b[p+1]=kong;// b[1+1]=kong  =18
+				}
+			}
+		}
+			document.write("<br/>")
+			document.write("数组现在开始进行排序的时候:")
+				for(var o =0;o<b.length;o++){
+				document.write(b[o]+"  ");
+			}		
+		document.write("<br/>")
+		document.write("<br/>")
+		document.write("<hr/>")
+
+
+		//three
+		var hezi ="";
+		var s =new Array(10,13,58,21,15,68,71,81,33,101,65,20,60);
+		document.write("数组原来没有排序的数字：")
+		for(var q =0;q<s.length;q++){
+			document.write(s[q]+"  ");
+		}
+		for(var w =0;w<s.length-1;w++){
+			for(var e =0;e<s.length-1-w;e++){
+				if(s[e]>s[e+1]){
+					hezi=s[e];
+					s[e]=s[e+1];
+					s[e+1]=hezi;
+				}
+			}
+		}
+		document.write("<br/>")
+		document.write("数组现在进行排序的时候：")
+			for(var q =0;q<s.length;q++){
+				document.write(s[q]+"  ");
+			}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

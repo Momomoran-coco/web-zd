@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态时间-</title>
+			<script>
+			//<img src="img/0.png" alt="" />
+			/*document.write("<img src='img/5.png' />");*/
+		
+		
+		var TimeImage = new Array("img/0.png","img/1.png","img/2.png","img/3.png","img/4.png","img/5.png","img/6.png","img/7.png","img/8.png","img/9.png");
+		function showTime(){
+			var ti = "";
+			//申明一个时间对象
+			var now = new Date();
+			var h = Ret(now.getHours());
+			var m = Ret(now.getMinutes());
+			var s = Ret(now.getSeconds());
+			//获取小时09，分别获取0和9
+			for(var i = 0;i<h.length;i++){
+				console.log(h[i]);//0 9
+				/*ti+="<img src="+TimeImage[h[i]]+">";*/
+			}
+			ti+=":";
+			//获取分钟
+			for(var i = 0;i<m.length;i++){
+				ti+="<img src="+TimeImage[m[i]]+">";
+			}
+			ti+=":";
+			//获取秒
+			for(var i = 0;i<s.length;i++){
+				ti+="<img src="+TimeImage[s[i]]+">";
+			}
+			
+			
+			var t = ti;
+			document.getElementById("show").innerHTML=t;
+			//控制台输出 console.log();
+			//alert(); document.write();
+			//console.log(typeof(h));
+		}
+		//定时器
+		setInterval("showTime()",1000);
+		function Ret(num){
+			if(num<10){
+				return "0"+num;
+			}
+			else
+			{
+				return ""+num;
+			}
+		}
+			
+		/*	
+		var n = "0"+5;
+		alert(typeof(n));*/
+		/*var n = "abcdefg";//字符串 = 字符数组
+		//alert(n.length);
+		for(var i = 0;i<n.length;i++){
+			document.write(n[i]+"<br>");
+		}*/
+		</script>
+</head>
+<body>
+	<div id="show" style="text-align: center;"></div>
+</body>
+</html>

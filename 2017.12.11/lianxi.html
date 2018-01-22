@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script>
+		//打印100-999的所有水仙花数：所谓的水仙话数就是各位数的3次方
+        //相加等于这个位数组合起来的值：比如153=1*1*1+5*5*5+3*3*3   就是153等于 1的三次方+5的三次方+3的三次方还是等于153 ，
+
+		for( var i =100;i<=999;i++){ //初始值  取值范围  步长
+
+			//分别获取这个数的个位、十位、百位
+			var g =i%10;//获得个位       % 不会有小数 余数为0
+			var s =Math.floor(i/10%10);//获得十位，Math.floor  取整
+			var b =Math.floor(i/100);//获得百位
+			if(g*g*g+s*s*s+b*b*b==i){// 1*1*1+5*5*5+3*3*3=153  进行比较
+				document.write("水仙花数："+i+"");//满足条件输出水仙花数
+			}
+		}
+		document.write("<hr/>")
+		//空心菱形
+		var num=7;
+		document.write("<table>")
+		for(var i =1;i<=num;i++){
+			document.write("<tr>")
+			for(var j =1;j<=num-i;j++){
+				document.write("<td></td>")
+			}
+			for(var x =1;x<=2*i-1;x++){
+				if(x==1||x==2*i-1){
+					document.write("<td >*</td>");
+				}else{
+					document.write("<td ></td>");
+				}
+			}
+			document.write("<tr>")
+		}
+		for(var i =1;i<=num;i++){
+			document.write("<tr>")
+			for(var j =1;j<=i-1;j++){
+				document.write("<td></td>")
+			}
+			for(var x =1;x<=13-(i-1)*2;x++){
+				if(x==1||x==13-(i-1)*2){
+					document.write("<td >*</td>");
+				}else{
+					document.write("<td ></td>");
+				}
+				
+			}
+			
+			document.write("<tr>")
+		}
+		document.write("</table>")
+		document.write("<br/>")
+		document.write("<br/>")
+		document.write("<br/>")	
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
